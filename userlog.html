@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黑龙江省非煤矿山安全许可证系统</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/commend.css">
+    <link rel="stylesheet" type="text/css" href="static/css/laydate.css">
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/commend.js"></script>
+    <script type="text/javascript" src="static/js/userlog.js"></script>
+    <style type="text/css">
+        .control-group.error input{
+            margin-left: 0;
+        }
+        #userlog hr{
+            margin:10px 0;
+        }
+        .stime:hover,.etime:hover{
+            cursor: pointer;
+        }
+        .center{
+            margin-top: 58px;
+            margin-bottom: 30px;
+        }
+        .center img {
+            position: absolute;
+            z-index: -1;
+        }
+
+        .center table,
+        .pagination{
+            margin-left: 10px;
+        }
+
+        .centerindex {
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav" class="" style="">
+    </div>
+    <div class="center control" style="">
+        <div class="centerindex control-group" id="userlog" style="margin-top: 20px;">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="control-group" >
+                        <span>开始时间:</span>
+                        <input type="text" id="stime" class="stime" value="" style="width: 150px" />
+                    </div>
+                    <div class="control-group">
+                        <span>结束时间:</span>
+                        <input type="text" id="etime" class="etime" value="" style="width: 150px"/>
+                    </div>
+                </div>
+                <div class="span7">
+                    <div class="control-group userlist">
+                        <span>操 作 员:</span>
+                        <select style="width: 150px;">  
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+            <a href="#" class="btn btn-small" onclick="userlog({page:1});">查询</a>
+            <!-- <a href="#" class="btn btn-small dellog" onclick="deluserlog();">删除</a> -->
+            <a href="index.html" class="btn btn-small">返回</a>
+            </div>
+            <hr>
+        </div>
+        <!-- <div id="userlog"></div> -->
+    </div>
+    <div class="popbox">
+    </div>
+    <div id="footer" class="">
+        <span class="user">操作员:</span>
+    </div>
+</body>
+</html>

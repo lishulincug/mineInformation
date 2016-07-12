@@ -1,0 +1,19 @@
+.table th{
+    text-align: center;
+    font-size: 18px;
+}
+.table td{
+    text-align: center;
+    border: 1px solid #ddd;
+}
+.tabContent{
+	width: 1000px;
+	margin: 60px auto 0 auto;
+}
+
+.tab_content{
+	width: 880px;
+}
+#tab0,#tab1,#tab2,#tab3,#tab4,#tab5,#tab6,#tab7,#tab8,#tab9,#tab10,#tab11,#tab12,#tab13,#tab14,#tab15,#tab16,#tab17{
+    width: 875px;
+}

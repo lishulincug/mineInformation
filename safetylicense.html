@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黑龙江省非煤矿山安全许可证系统</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/commend.css">
+    <link type="text/css" href="static/js/zTree/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/commend.js"></script>
+    <script type="text/javascript" src="static/js/safetylicense.js"></script>
+    <style type="text/css">
+        /*thead tr th{
+            width:30px;
+        }
+        #readycertinfo td{
+            text-align:right;
+        }
+        .modal-body{
+            max-height:500px;
+        }*/
+    </style>
+</head>
+<body>
+    <div id="nav" style="">
+    </div>
+    <div class="center control">
+        <div id="safetylicense">
+            <div class="control-group">
+                <span>持证单位:</span><input type="text" class="company">
+                <span>发证日期:</span><input type="text" class="issuingst" id="stime">
+                <span>至</span><input type="text" class="issuingend" id="etime">
+            </div>
+            <div class="control-group">
+                
+                <span>状况:</span>
+                <select class="status">
+                    <option value="正常">正常</option>
+                    <option value="撤销">已撤销</option>
+                    <option value="吊销">已吊销</option>
+                    <option value="注销">已注销</option>
+                    <option value="暂扣">已暂扣</option>
+                    <option value="换证">已换证</option>
+                </select>
+                <span>许可范围:</span>
+                <select class="premitscoperang">
+                    <option></option>
+                    <option value="0101001000">海上采油(气)</option>
+                    <option value="0101002000">陆上采油(气)</option>
+                    <option value="0101003000">钻井</option>
+                    <option value="0101004000">物探</option>
+                    <option value="0101005000">测井</option>
+                    <option value="0101006000">录井</option>
+                    <option value="0101007000">井下作业</option>
+                    <option value="0101008000">管道储运</option>
+                    <option value="0101009000">油建</option>
+                    <option value="0101010000">海油工程</option>
+                    <option value="0102010020">油页岩</option>
+                    <option value="0102010030">石油</option>
+                    <option value="0102010040">天然气</option>
+                    <option value="0102010050">煤层气</option>
+                    <option value="0102010060">天然沥青</option>
+                    <option value="0102010070">地热</option>
+                    <option value="0102010080">铀</option>
+                    <option value="0102010090">钍</option>
+                    <option value="0102010100">石煤</option>
+                    <option value="0102020010">铁矿</option>
+                    <option value="0102020020">锰矿</option>
+                    <option value="0102020030">铬铁矿</option>
+                    <option value="0102020040">钛矿</option>
+                    <option value="0102020050">钒矿</option>
+                    <option value="0102020060">金红石</option>
+                    <option value="0102030010">铜矿</option>
+                    <option value="0102030020">铅矿</option>
+                    <option value="0102030030">锌矿</option>
+                    <option value="0102030040">铝土矿</option>
+                    <option value="0102030050">镁矿</option>
+                    <option value="0102030060">镍矿</option>
+                    <option value="0102030070">钴矿</option>
+                    <option value="0102030080">钨矿</option>
+                    <option value="0102030090">锡矿</option>
+                    <option value="0102030100">铋矿</option>
+                    <option value="0102030110">钼矿</option>
+                    <option value="0102030120">汞矿</option>
+                    <option value="0102030130">锑矿</option>
+                    <option value="0102030140">多金属</option>
+                    <option value="0102040010">金矿</option>
+                    <option value="0102040020">砂金</option>
+                    <option value="0102040030">银矿</option>
+                    <option value="0102050010">铌钽矿</option>
+                    <option value="0102050020">铌矿</option>
+                    <option value="0102050030">钽矿</option>
+                    <option value="0102050040">铍矿</option>
+                    <option value="0102050050">锂矿</option>
+                    <option value="0102050060">锆矿</option>
+                    <option value="0102050070">锶矿(天青石)</option>
+                    <option value="0102050080">铷矿</option>
+                    <option value="0102050090">铯矿</option>
+                    <option value="0102050100">重稀土矿</option>
+                    <option value="0102050110">钇矿</option>
+                    <option value="0102050120">钆矿</option>
+                    <option value="0102050130">铽矿</option>
+                    <option value="0102050140">镝矿</option>
+                    <option value="0102050150">钬矿</option>
+                    <option value="0102050160">铒矿</option>
+                    <option value="0102050170">铥矿</option>
+                    <option value="0102050180">镱矿</option>
+                    <option value="0102050190">镥矿</option>
+                    <option value="0102050200">轻稀土矿</option>
+                    <option value="0102050210">铈矿</option>
+                    <option value="0102050220">镧矿</option>
+                    <option value="0102050230">镨矿</option>
+                    <option value="0102050240">铷矿</option>
+                    <option value="0102050250">钐矿</option>
+                    <option value="0102050260">铕矿</option>
+                    <option value="0102050270">锗矿</option>
+                    <option value="0102050280">镓矿</option>
+                    <option value="0102050290">铟矿</option>
+                    <option value="0102050300">铊矿</option>
+                    <option value="0102050310">铪矿</option>
+                    <option value="0102050320">铼矿</option>
+                    <option value="0102050330">镉矿</option>
+                    <option value="0102050340">钪矿</option>
+                    <option value="0102050350">硒矿</option>
+                    <option value="0102050360">碲矿</option>
+                    <option value="0102060010">蓝晶石</option>
+                    <option value="0102060020">矽线石</option>
+                    <option value="0102060030">红柱石</option>
+                    <option value="0102060040">菱镁矿</option>
+                    <option value="0102060050">萤石(普通)</option>
+                    <option value="0102060060">熔剂用石灰岩</option>
+                    <option value="0102060070">冶金用白云岩</option>
+                    <option value="0102060080">冶金用石英岩</option>
+                    <option value="0102060090">冶金用砂岩</option>
+                    <option value="0102060100">铸型用砂岩</option>
+                    <option value="0102060110">铸型用砂</option>
+                    <option value="0102060120">冶金用脉石英</option>
+                    <option value="0102060130">耐火粘土</option>
+                    <option value="0102060140">铁矾土</option>
+                    <option value="0102060150">铸型用粘土</option>
+                    <option value="0102060160">熔剂用蛇纹岩</option>
+                    <option value="0102060170">其他粘土</option>
+                    <option value="0102060180">耐火用橄榄岩</option>
+                    <option value="0102070010">铂矿</option>
+                    <option value="0102070020">钯矿</option>
+                    <option value="0102070030">铱矿</option>
+                    <option value="0102070040">铑矿</option>
+                    <option value="0102070050">锇矿</option>
+                    <option value="0102070060">钌矿</option>
+                    <option value="0102080010">自然硫</option>
+                    <option value="0102080020">硫铁矿</option>
+                    <option value="0102080030">纳硝石</option>
+                    <option value="0102080040">明矾石</option>
+                    <option value="0102080050">芒硝(含钙芒硝)</option>
+                    <option value="0102080060">重晶石</option>
+                    <option value="0102080070">毒重石</option>
+                    <option value="0102080080">天然碱(Na2CO3)</option>
+                    <option value="0102080090">电石用灰岩</option>
+                    <option value="0102080100">制碱用灰岩</option>
+                    <option value="0102080110">化肥用石灰岩</option>
+                    <option value="0102080120">化肥用白云岩</option>
+                    <option value="0102080130">化肥用石英岩</option>
+                    <option value="0102080140">化肥用砂岩</option>
+                    <option value="0102080150">含钾岩石</option>
+                    <option value="0102080160">含钾砂页岩</option>
+                    <option value="0102080170">化肥用橄榄岩</option>
+                    <option value="0102080180">化肥用蛇纹岩</option>
+                    <option value="0102080190">泥炭</option>
+                    <option value="0102080200">钾盐</option>
+                    <option value="0102080210">岩盐</option>
+                    <option value="0102080220">湖盐</option>
+                    <option value="0102080230">镁盐</option>
+                    <option value="0102080240">天然卤水</option>
+                    <option value="0102080250">碘</option>
+                    <option value="0102080260">溴</option>
+                    <option value="0102080270">砷</option>
+                    <option value="0102080280">磷矿</option>
+                    <option value="0102080290">矿盐</option>
+                    <option value="0102090010">金刚石</option>
+                    <option value="0102090020">压电水晶</option>
+                    <option value="0102090030">熔炼水晶</option>
+                    <option value="0102090040">光学水晶</option>
+                    <option value="0102090050">工艺水晶</option>
+                    <option value="0102090060">蓝石棉</option>
+                    <option value="0102090070">云母</option>
+                    <option value="0102090080">电气石</option>
+                    <option value="0102090090">冰洲石</option>
+                    <option value="0102090100">光学萤石</option>
+                    <option value="0102090110">硼石</option>
+                    <option value="0102090120">水晶</option>
+                    <option value="0102090130">方解石</option>
+                    <option value="0102100010">石墨</option>
+                    <option value="0102100020">刚玉</option>
+                    <option value="0102100030">硅灰石</option>
+                    <option value="0102100040">滑石</option>
+                    <option value="0102100050">石棉(温石棉)</option>
+                    <option value="0102100060">长石</option>
+                    <option value="0102100070">石榴子石</option>
+                    <option value="0102100080">黄玉</option>
+                    <option value="0102100090">叶蜡石</option>
+                    <option value="0102100100">蛭石</option>
+                    <option value="0102100110">沸石</option>
+                    <option value="0102100120">石膏</option>
+                    <option value="0102100130">宝石</option>
+                    <option value="0102100140">玉石</option>
+                    <option value="0102100150">玛瑙</option>
+                    <option value="0102100160">玻璃用石灰岩</option>
+                    <option value="0102100170">水泥用石灰岩</option>
+                    <option value="0102100180">致灰用石灰岩</option>
+                    <option value="0102100190">泥灰岩</option>
+                    <option value="0102100200">白垩</option>
+                    <option value="0102100210">玻璃用白云岩</option>
+                    <option value="0102100220">玻璃用石英岩</option>
+                    <option value="0102100230">玻璃用砂岩</option>
+                    <option value="0102100240">水泥配料用砂岩</option>
+                    <option value="0102100250">砖瓦用砂岩</option>
+                    <option value="0102100260">陶瓷用砂岩</option>
+                    <option value="0102100270">玻璃用砂</option>
+                    <option value="0102100280">建筑用砂</option>
+                    <option value="0102100290">水泥配料用砂</option>
+                    <option value="0102100300">水泥标准砂</option>
+                    <option value="0102100310">砖瓦用砂</option>
+                    <option value="0102100320">玻璃用脉石英</option>
+                    <option value="0102100330">粉石英</option>
+                    <option value="0102100340">天然油石</option>
+                    <option value="0102100350">硅藻土</option>
+                    <option value="0102100360">陶粒页岩</option>
+                    <option value="0102100370">砖瓦用页岩</option>
+                    <option value="0102100380">水泥配料用页岩</option>
+                    <option value="0102100390">高岭土</option>
+                    <option value="0102100400">陶瓷土</option>
+                    <option value="0102100410">凹凸棒石粘土</option>
+                    <option value="0102100420">海泡石粘土</option>
+                    <option value="0102100430">伊利石粘土</option>
+                    <option value="0102100440">累托石粘土</option>
+                    <option value="010210050">膨润土</option>
+                    <option value="0102100460">砖瓦用粘土</option>
+                    <option value="0102100470">水泥用粘土</option>
+                    <option value="0102100480">水泥配料用红土</option>
+                    <option value="0102100490">水泥配料用黄土</option>
+                    <option value="0102100500">水泥配料用泥岩</option>
+                    <option value="0102100510">保温材料用粘土</option>
+                    <option value="0102100520">铸石用玄武岩</option>
+                    <option value="0102100530">水泥用辉绿岩</option>
+                    <option value="0102100540">铸石用辉绿岩</option>
+                    <option value="0102100550">水泥混合材料用安山岩</option>
+                    <option value="0102100560">水泥混合材料用闪长玢岩</option>
+                    <option value="010210070">麦饭石</option>
+                    <option value="0102100580">珍珠岩</option>
+                    <option value="0102100590">黑曜石</option>
+                    <option value="0102100600">松脂岩</option>
+                    <option value="0102100610">浮石</option>
+                    <option value="0102100620">水泥用粗面岩</option>
+                    <option value="0102100630">铸石用粗面岩</option>
+                    <option value="0102100640">玻璃用凝灰岩</option>
+                    <option value="0102100650">水泥用凝灰岩</option>
+                    <option value="0102100650">水泥用大理石</option>
+                    <option value="0102100670">玻璃用大理石</option>
+                    <option value="0102100680">建筑用石料(凝灰岩)</option>
+                    <option value="0102100690">饰面用石料(大理石)</option>
+                    <option value="0102100700">油砂</option>
+                    <option value="0102100710">赭石</option>
+                    <option value="0102100720">颜料矿物</option>
+                    <option value="0102100730">颜料黄土</option>
+                    <option value="0102100740">透辉石</option>
+                    <option value="0102100750">透闪石</option>
+                    <option value="0102100760">石灰岩</option>
+                    <option value="0102100770">建筑石料用灰岩</option>
+                    <option value="0102100780">含钾岩石</option>
+                    <option value="0102100790">白云岩</option>
+                    <option value="0102100800">建筑用白云岩</option>
+                    <option value="0102100810">石英岩</option>
+                    <option value="0102100820">冶金用石英岩</option>
+                    <option value="0102100830">砂岩</option>
+                    <option value="0102100840">天然石英砂</option>
+                    <option value="0102100850">脉石岩</option>
+                    <option value="0102100860">页岩</option>
+                    <option value="0102100870">陶粒用粘土</option>
+                    <option value="0102100880">橄榄岩</option>
+                    <option value="0102100890">建筑用橄榄岩</option>
+                    <option value="0102100900">蛇纹岩</option>
+                    <option value="0102100910">饰面用蛇纹岩</option>
+                    <option value="0102100920">玄武岩</option>
+                    <option value="0102100930">岩棉用玄武岩</option>
+                    <option value="0102100940">辉绿岩</option>
+                    <option value="0102100950">建筑用辉绿岩</option>
+                    <option value="0102100960">饰面用辉绿岩</option>
+                    <option value="0102100970">饰面用灰岩</option>
+                    <option value="0102100980">安山岩</option>
+                    <option value="0102100990">饰面用安山岩</option>
+                    <option value="0102101000">建筑用安山岩</option>
+                    <option value="0102101010">闪长岩</option>
+                    <option value="0102101020">建筑用闪长岩</option>
+                    <option value="0102101030">花岗岩</option>
+                    <option value="0102101040">建筑用花岗岩</option>
+                    <option value="0102101050">饰面用花岗岩</option>
+                    <option value="0102101060">粗面岩</option>
+                    <option value="0102101070">霞石正常岩</option>
+                    <option value="0102101080">凝灰岩</option>
+                    <option value="0102101090">火山灰</option>
+                    <option value="0102101100">水泥用火山灰</option>
+                    <option value="0102101110">火山渣</option>
+                    <option value="0102101120">大理岩</option>
+                    <option value="0102101130">建筑用大理石</option>
+                    <option value="0102101140">板岩</option>
+                    <option value="0102101150">饰面用板岩</option>
+                    <option value="0102101160">水泥配料用板岩</option>
+                    <option value="0102101170">片麻岩</option>
+                    <option value="0102101180">角闪岩</option>
+                    <option value="0102101190">海砂</option>
+                    <option value="0102110010">矿泉水</option>
+                    <option value="0102110020">地下水</option>
+                    <option value="0102110030">二氧化碳气</option>
+                    <option value="0102110040">硫化氢气</option>
+                    <option value="0102110050">氦气</option>
+                    <option value="0102110060">氢气</option>
+                    <option value="0102110070">氡气</option>
+                    <option value="0103001000">尾矿库运行</option>
+                    <option value="0104001000">金属非金属矿山采掘施工作业</option>
+                    <option value="0105001000">金属非金属矿产资源地质勘探</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <a href="" class="btn" onclick="getsafetylicensetable({page:1});return false;">查询</a>
+                <a href="" class="btn fun revoke disable" onclick="return false;">撤销</a>
+                <a href="" class="btn fun withdraw disable" onclick="return false;">吊销</a>
+                <a href="" class="btn fun cancel disable" onclick="return false;">注销</a>
+                <a href="" class="btn fun suspendorrecovery disable" onclick="return false;">暂扣/恢复</a>
+                <a href="" class="btn" onclick="outExcel();return false;">导出Excel</a>
+            </div>
+            <hr/>
+        </div>
+    </div>
+    <div class="popbox">
+        <div id="revoke" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:none;width: 480px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="myModalLabel">撤销</h4>
+            </div>
+            <div class="modal-body control">
+                <p style="color: red;">注意:撤销许可证的同时，该许可证亦被注销</p>
+                <div class="row-fluid">
+                    <div class="span5">
+                        <input type="checkbox">
+                        <span>超越职权颁发安全生产许可证</span>
+                    </div>
+                    <div class="span5">
+                        <input type="checkbox">
+                        <span>不具备安全生产条件颁发安全许可证</span>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span5">
+                        <input type="checkbox">
+                        <span>违反规定程序颁发安全生产许可证</span>
+                    </div>
+                    <div class="span5">
+                        <input type="checkbox">
+                        <span>以欺骗、贿赂等不正当手段取得安全生产许可证</span>
+                    </div>
+                </div>
+                <textarea style="min-width: 420px;"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal">关闭</button>
+                <button class="btn btn-primary" onclick="setstatus('revoke','撤销');">确定</button>
+            </div>
+        </div>
+        <div id="withdraw" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:none;width: 480px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="myModalLabel">吊销</h4>
+            </div>
+            <div class="modal-body control">
+                <p style="color: red;">注意:吊销许可证的同时，该许可证亦被注销</p>
+                <div class="row-fluid">
+                    <div class="span5">
+                        <input type="checkbox">
+                        <span>非法转让安全生产许可证</span>
+                    </div>
+                    <div class="span5">
+                        <input type="checkbox">
+                        <span>暂扣安全生产许可证后未能按期整改或逾期仍不具备规定的安全生产条件</span>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span5">
+                        <input type="checkbox">
+                        <span>采取欺骗手段取得安全生产许可证</span>
+                    </div>
+                </div>
+                <textarea style="min-width: 420px;"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal">关闭</button>
+                <button class="btn btn-primary" onclick="setstatus('withdraw','吊销')">确定</button>
+            </div>
+        </div>
+        <div id="cancel" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:none;width: 480px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="myModalLabel">注销</h4>
+            </div>
+            <div class="modal-body control">
+                <p style="color: red;">注意:此操作无法撤销!</p>
+                <div class="row-fluid">
+                    <div class="span5">
+                        <input type="checkbox">
+                        <span>终止非煤矿矿山企业生产活动</span>
+                    </div>
+                    <div class="span5">
+                        <input type="checkbox">
+                        <span>安全生产许可证被依法吊销</span>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span5">
+                        <input type="checkbox">
+                        <span>安全生产许可证被依法撤销</span>
+                    </div>
+                </div>
+                <textarea style="min-width: 420px;"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal">关闭</button>
+                <button class="btn btn-primary" onclick="setstatus('cancel','注销')">确定</button>
+            </div>
+        </div>
+        <div id="suspendorrecovery" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:none;width: 480px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="myModalLabel">注销</h4>
+            </div>
+            <div class="modal-body control">
+                <p style="color: red;">此操作将正常许可证修改为暂扣状态</p>
+                <div class="row-fluid">
+                    <div class="span5">
+                        <input type="checkbox">
+                        <span>发生重大事故</span>
+                    </div>
+                    <div class="span5">
+                        <input type="checkbox">
+                        <span>未按期整改</span>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span5">
+                        <input type="checkbox">
+                        <span>不具备安全生产条件</span>
+                    </div>
+                </div>
+                <textarea style="min-width: 420px;"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal">关闭</button>
+                <button class="btn btn-primary" onclick="setstatus('suspendorrecovery','暂扣')">确定</button>
+            </div>
+        </div>
+    </div>
+    <div id="footer" style="">
+        <span class="user">操作员:</span>
+    </div>
+</body>
+</html>

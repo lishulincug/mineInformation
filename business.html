@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黑龙江省非煤矿山行政许可管理系统</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/commend.css">
+    <link type="text/css" href="static/js/zTree/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/commend.js"></script>
+    <script type="text/javascript" src="static/js/business.js"></script>
+    <style type="text/css">
+        /*thead tr th{
+            width:30px;
+        }
+        #readycertinfo td{
+            text-align:right;
+        }
+        .modal-body{
+            max-height:500px;
+        }*/
+    </style>
+</head>
+<body>
+    <div id="nav" style="">
+    </div>
+    <div class="center control">
+        <div id="ready">
+            <div class="control-group">
+                <input type="text" style="margin-top: 5px;" placeholder="单位" class="readyquery">
+                <a href="" class="btn" id="search" onclick="getbusinesstable($('.readyquery').val());console.log($('.readyquery').val());return false;">查询</a>
+            </div>
+            <div class="control-group">
+                <a class="btn" id="printExcel" onclick="getExcel()">导出Excel文件</a>
+                <a href="" class="btn disabled info" onclick="getreadyinfo();return false;">详情</a>
+            </div>
+            <hr/>
+        </div>
+    </div>
+    <div class="popbox">
+    </div>
+    <div id="footer" style="">
+        <span class="user">操作员:</span>
+    </div>
+</body>
+</html>

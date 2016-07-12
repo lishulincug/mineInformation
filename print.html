@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/commend.css">
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/commend.js"></script>
+	<script language="javascript" src="static/js/jquery.jqprint-0.3.js"></script>
+	<title>打印</title>
+</head>
+<body>
+	<img src="" alt="">
+</body>
+<script type="text/javascript">
+	var url=GetRequest()
+	$(document).ready(function(){
+		var f = function(b){
+			$('img').attr('src',b.data);
+			$('img').jqprint();
+		}
+		var e={
+			type:url['type'],
+			id:url['id']
+		}
+		pcdata('post','permit/print',e,false,'json',f)
+	})
+</script>
+</html>

@@ -1,0 +1,2952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全国非煤矿山安全许可证系统</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/commend.css">
+    <link rel="stylesheet" href="static/css/mineInfo.css">
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/commend.js"></script>
+    <script type="text/javascript" src="static/js/mineInfo.js"></script>
+</head>
+<body>
+	<div class="top" style="width:100%">
+		<span style="float:right;line-height:25px;" class="welcome">欢迎你，</span>
+		<span class="userName" style="float:right;margin-right:30px;line-height:25px;"></span>
+		<p style="width:100%;height:25px;background:#EFF0EF;border-bottom:1px solid #ddd;line-height:25px;"></p>
+	</div>
+	<div class="header">
+    </div>
+    <ul class="header_nav">
+        <li class="text-center"><a href="index.html"><i class="icon-home"></i>&nbsp;&nbsp;首页</a></li>
+        <li class="text-center"><a href="mineInfo.html" class="tabActive"><i class="icon-th-large"></i>&nbsp;&nbsp;矿山基本信息</a></li>
+        <li class="text-center"><a href="licenseManage.html"><i class="icon-inbox"></i>&nbsp;&nbsp;许可证管理</a></li>
+        <li class="text-center"><a href="threeTogether.html"><i class="icon-list-alt"></i>&nbsp;&nbsp;三同时管理</a></li>
+        <li class="text-center"><a href="accidentRegister.html"><i class="icon-warning-sign"></i>&nbsp;&nbsp;事故统计</a></li>
+        <li class="text-center"><a href="lawManage.html"><i class="icon-book"></i>&nbsp;&nbsp;政策法规</a></li>
+    </ul>
+	<div class="tabContent">
+        <div class="tabbable tabs-left tab_change">
+            <ul class="nav nav-tabs tab_change_list">
+                <li class="active"><a href="#tab0" data-toggle="tab" class="tab0">黑龙江省</a></li>
+                <li><a href="#tab1" data-toggle="tab" class="tab1" name="1923010100">哈尔滨市</a></li>
+                <li><a href="#tab2" data-toggle="tab" class="tab2" name="1923020100">齐齐哈尔</a></li>
+                <li><a href="#tab3" data-toggle="tab" class="tab3" name="1923100100">牡丹江</a></li>
+                <li><a href="#tab4" data-toggle="tab" class="tab4" name="1923080100">佳木斯</a></li>
+                <li><a href="#tab5" data-toggle="tab" class="tab5" name="1923060100">大庆</a></li>
+                <li><a href="#tab6" data-toggle="tab" class="tab6" name="1923030100">鸡西</a></li>
+                <li><a href="#tab7" data-toggle="tab" class="tab7" name="1923050100">双鸭山</a></li>
+                <li><a href="#tab8" data-toggle="tab" class="tab8" name="1923070100">伊春</a></li>
+                <li><a href="#tab9" data-toggle="tab" class="tab9" name="1923090100">七台河</a></li>
+                <li><a href="#tab10" data-toggle="tab" class="tab10" name="1923040100">鹤岗</a></li>
+                <li><a href="#tab11" data-toggle="tab" class="tab11" name="1923110100">黑河</a></li>
+                <li><a href="#tab12" data-toggle="tab" class="tab12" name="1923120100">绥化</a></li>
+                <li><a href="#tab13" data-toggle="tab" class="tab13" name="1923272100">大兴安岭</a></li>
+                <li><a href="#tab14" data-toggle="tab" class="tab14" name="1923280100">农垦总局</a></li>
+                <li><a href="#tab15" data-toggle="tab" class="tab15" name="1923290100">森工总局</a></li>
+                <li><a href="#tab16" data-toggle="tab" class="tab16" name="1923108100">绥芬河</a></li>
+                <li><a href="#tab17" data-toggle="tab" class="tab17" name="1923083300">抚远</a></li>
+            </ul>
+            <div class="tab-content tab_content">
+                <div class="tab-pane fade active in" id="tab0">
+                    <table class="table table-condensed indexTable">
+                        <th colspan="6">全省非煤矿山企业基本情况统计表</th>
+                        <tr>
+                            <th rowspan="2">地市</th>
+                            <th rowspan="2">企业总数</th>
+                            <th colspan="2">安全生产许可证颁发情况</th>
+                        </tr>
+                        <tr>
+                            <th>企业数量</th>
+                            <th>许可证数量</th>
+                        </tr>
+                        <tr class="empty">
+                            <th>哈尔滨</th>
+                            <td class="hrbempty1" id="hrb1"></td>
+                            <td class="hrbempty1" id="hrb2"></td>
+                            <td class="hrbempty1" id="hrb3"></td>
+                        </tr>
+                        <tr class="empty">
+                            <th>齐齐哈尔</th>
+                            <td class="qqempty1" id="qqhr1"></td>
+                            <td class="qqempty1" id="qqhr2"></td>
+                            <td class="qqempty1" id="qqhr3"></td>
+                        </tr>
+                        <tr class="empty">
+                            <th>牡丹江</th>
+                            <td class="mdjempty1" id="mdj1"></td>
+                            <td class="mdjempty1" id="mdj2"></td>
+                            <td class="mdjempty1" id="mdj3"></td>
+                        </tr>
+                        <tr class="empty">
+                            <th>佳木斯</th>
+                            <td class="jmsempty1" id="jms1"></td>
+                            <td class="jmsempty1" id="jms2"></td>
+                            <td class="jmsempty1" id="jms3"></td>
+                        </tr>
+                        <tr class="empty">
+                            <th>大庆</th>
+                            <td class="dqempty1" id="dq1"></td>
+                            <td class="dqempty1" id="dq2"></td>
+                            <td class="dqempty1" id="dq3"></td>
+                        </tr>
+                        <tr class="empty">
+                            <th>鸡西</th>
+                            <td class="jxempty1" id="jx1"></td>
+                            <td class="jxempty1" id="jx2"></td>
+                            <td class="jxempty1" id="jx3"></td>
+                        </tr>
+                        <tr class="empty">
+                            <th>双鸭山</th>
+                            <td class="sysempty1" id="sys1"></td>
+                            <td class="sysempty1" id="sys2"></td>
+                            <td class="sysempty1" id="sys3"></td>
+                        </tr>
+                        <tr class="empty">
+                            <th>伊春</th>
+                            <td class="ycempty1" id="yc1"></td>
+                            <td class="ycempty1" id="yc2"></td>
+                            <td class="ycempty1" id="yc3"></td>
+                        </tr>
+                        <tr class="empty">
+                            <th>七台河</th>
+                            <td class="qthempty1" id="qth1"></td>
+                            <td class="qthempty1" id="qth2"></td>
+                            <td class="qthempty1" id="qth3"></td>
+                        </tr>
+                        <tr class="empty">
+                            <th>鹤岗</th>
+                            <td class="hgempty1" id="hg1"></td>
+                            <td class="hgempty1" id="hg2"></td>
+                            <td class="hgempty1" id="hg3"></td>
+                        </tr>
+                        <tr class="empty">
+                            <th>黑河</th>
+                            <td class="hhempty1" id="hh1"></td>
+                            <td class="hhempty1" id="hh2"></td>
+                            <td class="hhempty1" id="hh3"></td>
+                        </tr>
+                        <tr class="empty">
+                            <th>绥化</th>
+                            <td class="shempty1" id="sh1"></td>
+                            <td class="shempty1" id="sh2"></td>
+                            <td class="shempty1" id="sh3"></td>
+                        </tr>
+                        <tr class="empty">
+                            <th>大兴安岭</th>
+                            <td class="dxalempty1" id="dxal1"></td>
+                            <td class="dxalempty1" id="dxal2"></td>
+                            <td class="dxalempty1" id="dxal3"></td>
+                        </tr>
+                        <tr class="empty">
+                            <th>农垦总局</th>
+                            <td class="nkzjempty1" id="nkzj1"></td>
+                            <td class="nkzjempty1" id="nkzj2"></td>
+                            <td class="nkzjempty1" id="nkzj3"></td>
+                        </tr>
+                        <tr class="empty">
+                            <th>森工总局</th>
+                            <td class="sgzjempty1" id="sgzj1"></td>
+                            <td class="sgzjempty1" id="sgzj2"></td>
+                            <td class="sgzjempty1" id="sgzj3"></td>
+                        </tr>
+                        <tr class="empty">
+                            <th>绥芬河</th>
+                            <td class="sfhempty1" id="sfh1"></td>
+                            <td class="sfhempty1" id="sfh2"></td>
+                            <td class="sfhempty1" id="sfh3"></td>
+                        </tr>
+                        <tr class="empty">
+                            <th>抚远</th>
+                            <td class="fyempty1" id="fy1"></td>
+                            <td class="fyempty1" id="fy2"></td>
+                            <td class="fyempty1" id="fy3"></td>
+                        </tr>
+                        <tr class="empty">
+                            <th>合计</th>
+                            <td class="sumempty1"></td>
+                            <td class="sumempty2"></td>
+                            <td class="sumempty3"></td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-info span3" style="margin-bottom:40px;">导出Excel</button>
+                </div>
+                <div class="tab-pane fade" id="tab1">
+                    <table class="table">
+                        <th colspan="16">哈尔滨市已颁发安全生产许可证企业情况统计表</th>
+                        <tr>
+                            <th rowspan="2">项目</th>
+                            <th rowspan="2">企业数量</th>
+                            <th rowspan="2">许可证数量</th>
+                            <th colspan="5">金属矿山</th>
+                            <th colspan="8">非金属矿山</th>
+                        </tr>
+                        <tr>
+                            <th>铅锌</th>
+                            <th>铁</th>
+                            <th>铜</th>
+                            <th>金</th>
+                            <th>钼</th>
+                            <th>膨润土</th>
+                            <th>大理岩</th>
+                            <th>石灰岩</th>
+                            <th>石英</th>
+                            <th>建筑石料</th>
+                            <th>石墨</th>
+                            <th>硅(矽)线石</th>
+                        </tr>
+                        <tr class="hrbempty">
+                            <th class="projectTitle"><a class="hrbUnder">地下矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hrbempty">
+                            <th class="projectTitle"><a class="hrbOpen">露天矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hrbempty">
+                            <th class="projectTitle"><a class="hrbStone">小型露天采石场</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hrbempty">
+                            <th class="projectTitle"><a class="hrbOil">石油天然气开采企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hrbempty">
+                            <th class="projectTitle"><a class="hrbExcavate">采掘施工企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hrbempty">
+                            <th class="projectTitle"><a class="hrbExplore">地址勘探企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hrbempty">
+                            <th class="projectTitle"><a class="hrbTailing">尾矿库</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hrbempty">
+                            <th>合计</th>
+                            <td class="sum1"></td>
+                            <td class="sum2"></td>
+                            <td class="sum3"></td>
+                            <td class="sum4"></td>
+                            <td class="sum5"></td>
+                            <td class="sum6"></td>
+                            <td class="sum7"></td>
+                            <td class="sum8"></td>
+                            <td class="sum9"></td>
+                            <td class="sum10"></td>
+                            <td class="sum11"></td>
+                            <td class="sum12"></td>
+                            <td class="sum13"></td>
+                            <td class="sum14"></td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-info span3" style="margin-bottom:40px;">导出Excel</button>
+                </div>
+                <div class="tab-pane fade" id="tab2">
+                    <table class="table">
+                        <th colspan="16">齐齐哈尔市已颁发安全生产许可证企业情况统计表</th>
+                        <tr>
+                            <th rowspan="2">项目</th>
+                            <th rowspan="2">企业数量</th>
+                            <th rowspan="2">许可证数量</th>
+                            <th colspan="5">金属矿山</th>
+                            <th colspan="8">非金属矿山</th>
+                        </tr>
+                        <tr>
+                            <th>铅锌</th>
+                            <th>铁</th>
+                            <th>铜</th>
+                            <th>金</th>
+                            <th>钼</th>
+                            <th>膨润土</th>
+                            <th>大理岩</th>
+                            <th>石灰岩</th>
+                            <th>石英</th>
+                            <th>建筑石料</th>
+                            <th>石墨</th>
+                            <th>硅(矽)线石</th>
+                        </tr>
+                        <tr class="qqempty">
+                            <th class="projectTitle"><a class="qqUnder">地下矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="qqempty">
+                            <th class="projectTitle"><a class="qqOpen">露天矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="qqempty">
+                            <th class="projectTitle"><a class="qqStone">小型露天采石场</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="qqempty">
+                            <th class="projectTitle"><a class="qqOil">石油天然气开采企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="qqempty">
+                            <th class="projectTitle"><a class="qqExcavate">采掘施工企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="qqempty">
+                            <th class="projectTitle"><a class="qqExplore">地址勘探企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="qqempty">
+                            <th class="projectTitle"><a class="qqTailing">尾矿库</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="qqempty">
+                            <th class="projectTitle">合计</th>
+                            <td class="sum1"></td>
+                            <td class="sum2"></td>
+                            <td class="sum3"></td>
+                            <td class="sum4"></td>
+                            <td class="sum5"></td>
+                            <td class="sum6"></td>
+                            <td class="sum7"></td>
+                            <td class="sum8"></td>
+                            <td class="sum9"></td>
+                            <td class="sum10"></td>
+                            <td class="sum11"></td>
+                            <td class="sum12"></td>
+                            <td class="sum13"></td>
+                            <td class="sum14"></td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-info span3" style="margin-bottom:40px;">导出Excel</button>
+                </div>
+                <div class="tab-pane fade" id="tab3">
+                    <table class="table">
+                        <th colspan="16">牡丹江市已颁发安全生产许可证企业情况统计表</th>
+                        <tr>
+                            <th rowspan="2">项目</th>
+                            <th rowspan="2">企业数量</th>
+                            <th rowspan="2">许可证数量</th>
+                            <th colspan="5">金属矿山</th>
+                            <th colspan="8">非金属矿山</th>
+                        </tr>
+                        <tr>
+                            <th>铅锌</th>
+                            <th>铁</th>
+                            <th>铜</th>
+                            <th>金</th>
+                            <th>钼</th>
+                            <th>膨润土</th>
+                            <th>大理岩</th>
+                            <th>石灰岩</th>
+                            <th>石英</th>
+                            <th>建筑石料</th>
+                            <th>石墨</th>
+                            <th>硅(矽)线石</th>
+                        </tr>
+                        <tr class="mdjempty">
+                            <th class="projectTitle"><a class="mdjUnder">地下矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="mdjempty">
+                            <th class="projectTitle"><a class="mdjOpen">露天矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="mdjempty">
+                            <th class="projectTitle"><a class="mdjStone">小型露天采石场</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="mdjempty">
+                            <th class="projectTitle"><a class="mdjOil">石油天然气开采企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="mdjempty">
+                            <th class="projectTitle"><a class="mdjExcavate">采掘施工企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="mdjempty">
+                            <th class="projectTitle"><a class="mdjExplore">地址勘探企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="mdjempty">
+                            <th class="projectTitle"><a class="mdjTailing">尾矿库</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="mdjempty">
+                            <th class="projectTitle">合计</th>
+                            <td class="sum1"></td>
+                            <td class="sum2"></td>
+                            <td class="sum3"></td>
+                            <td class="sum4"></td>
+                            <td class="sum5"></td>
+                            <td class="sum6"></td>
+                            <td class="sum7"></td>
+                            <td class="sum8"></td>
+                            <td class="sum9"></td>
+                            <td class="sum10"></td>
+                            <td class="sum11"></td>
+                            <td class="sum12"></td>
+                            <td class="sum13"></td>
+                            <td class="sum14"></td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-info span3" style="margin-bottom:40px;">导出Excel</button>
+                </div>
+                <div class="tab-pane fade" id="tab4">
+                    <table class="table">
+                        <th colspan="16">佳木斯市已颁发安全生产许可证企业情况统计表</th>
+                        <tr>
+                            <th rowspan="2">项目</th>
+                            <th rowspan="2">企业数量</th>
+                            <th rowspan="2">许可证数量</th>
+                            <th colspan="5">金属矿山</th>
+                            <th colspan="8">非金属矿山</th>
+                        </tr>
+                        <tr>
+                            <th>铅锌</th>
+                            <th>铁</th>
+                            <th>铜</th>
+                            <th>金</th>
+                            <th>钼</th>
+                            <th>膨润土</th>
+                            <th>大理岩</th>
+                            <th>石灰岩</th>
+                            <th>石英</th>
+                            <th>建筑石料</th>
+                            <th>石墨</th>
+                            <th>硅(矽)线石</th>
+                        </tr>
+                        <tr class="jmsempty">
+                            <th class="projectTitle"><a class="jmsUnder">地下矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="jmsempty">
+                            <th class="projectTitle"><a class="jmsOpen">露天矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="jmsempty">
+                            <th class="projectTitle"><a class="jmsStone">小型露天采石场</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="jmsempty">
+                            <th class="projectTitle"><a class="jmsOil">石油天然气开采企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="jmsempty">
+                            <th class="projectTitle"><a class="jmsExcavate">采掘施工企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="jmsempty">
+                            <th class="projectTitle"><a class="jmsExplore">地址勘探企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="jmsempty">
+                            <th class="projectTitle"><a class="jmsTailing">尾矿库</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="jmsempty">
+                            <th class="projectTitle">合计</th>
+                            <td class="sum1"></td>
+                            <td class="sum2"></td>
+                            <td class="sum3"></td>
+                            <td class="sum4"></td>
+                            <td class="sum5"></td>
+                            <td class="sum6"></td>
+                            <td class="sum7"></td>
+                            <td class="sum8"></td>
+                            <td class="sum9"></td>
+                            <td class="sum10"></td>
+                            <td class="sum11"></td>
+                            <td class="sum12"></td>
+                            <td class="sum13"></td>
+                            <td class="sum14"></td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-info span3" style="margin-bottom:40px;">导出Excel</button>
+                </div>
+                <div class="tab-pane fade" id="tab5">
+                    <table class="table">
+                        <th colspan="16">大庆市已颁发安全生产许可证企业情况统计表</th>
+                        <tr>
+                            <th rowspan="2">项目</th>
+                            <th rowspan="2">企业数量</th>
+                            <th rowspan="2">许可证数量</th>
+                            <th colspan="5">金属矿山</th>
+                            <th colspan="8">非金属矿山</th>
+                        </tr>
+                        <tr>
+                            <th>铅锌</th>
+                            <th>铁</th>
+                            <th>铜</th>
+                            <th>金</th>
+                            <th>钼</th>
+                            <th>膨润土</th>
+                            <th>大理岩</th>
+                            <th>石灰岩</th>
+                            <th>石英</th>
+                            <th>建筑石料</th>
+                            <th>石墨</th>
+                            <th>硅(矽)线石</th>
+                        </tr>
+                        <tr class="dqempty">
+                            <th class="projectTitle"><a class="dqUnder">地下矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="dqempty">
+                            <th class="projectTitle"><a class="dqOpen">露天矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="dqempty">
+                            <th class="projectTitle"><a class="dqStone">小型露天采石场</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="dqempty">
+                            <th class="projectTitle"><a class="dqOil">石油天然气开采企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="dqempty">
+                            <th class="projectTitle"><a class="dqExcavate">采掘施工企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="dqempty">
+                            <th class="projectTitle"><a class="dqExplore">地址勘探企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="dqempty">
+                            <th class="projectTitle"><a class="dqTailing">尾矿库</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="dqempty">
+                            <th class="projectTitle">合计</th>
+                            <td class="sum1"></td>
+                            <td class="sum2"></td>
+                            <td class="sum3"></td>
+                            <td class="sum4"></td>
+                            <td class="sum5"></td>
+                            <td class="sum6"></td>
+                            <td class="sum7"></td>
+                            <td class="sum8"></td>
+                            <td class="sum9"></td>
+                            <td class="sum10"></td>
+                            <td class="sum11"></td>
+                            <td class="sum12"></td>
+                            <td class="sum13"></td>
+                            <td class="sum14"></td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-info span3" style="margin-bottom:40px;">导出Excel</button>
+                </div>
+                <div class="tab-pane fade" id="tab6">
+                    <table class="table">
+                        <th colspan="16">鸡西市已颁发安全生产许可证企业情况统计表</th>
+                        <tr>
+                            <th rowspan="2">项目</th>
+                            <th rowspan="2">企业数量</th>
+                            <th rowspan="2">许可证数量</th>
+                            <th colspan="5">金属矿山</th>
+                            <th colspan="8">非金属矿山</th>
+                        </tr>
+                        <tr>
+                            <th>铅锌</th>
+                            <th>铁</th>
+                            <th>铜</th>
+                            <th>金</th>
+                            <th>钼</th>
+                            <th>膨润土</th>
+                            <th>大理岩</th>
+                            <th>石灰岩</th>
+                            <th>石英</th>
+                            <th>建筑石料</th>
+                            <th>石墨</th>
+                            <th>硅(矽)线石</th>
+                        </tr>
+                        <tr class="jxempty">
+                            <th class="projectTitle"><a class="jxUnder">地下矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="jxempty">
+                            <th class="projectTitle"><a class="jxOpen">露天矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="jxempty">
+                            <th class="projectTitle"><a class="jxStone">小型露天采石场</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="jxempty">
+                            <th class="projectTitle"><a class="jxOil">石油天然气开采企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="jxempty">
+                            <th class="projectTitle"><a class="jxExcavate">采掘施工企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="jxempty">
+                            <th class="projectTitle"><a class="jxExplore">地址勘探企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="jxempty">
+                            <th class="projectTitle"><a class="jxTailing">尾矿库</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="jxempty">
+                            <th class="projectTitle">合计</th>
+                            <td class="sum1"></td>
+                            <td class="sum2"></td>
+                            <td class="sum3"></td>
+                            <td class="sum4"></td>
+                            <td class="sum5"></td>
+                            <td class="sum6"></td>
+                            <td class="sum7"></td>
+                            <td class="sum8"></td>
+                            <td class="sum9"></td>
+                            <td class="sum10"></td>
+                            <td class="sum11"></td>
+                            <td class="sum12"></td>
+                            <td class="sum13"></td>
+                            <td class="sum14"></td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-info span3" style="margin-bottom:40px;">导出Excel</button>
+                </div>
+                <div class="tab-pane fade" id="tab7">
+                    <table class="table">
+                        <th colspan="16">双鸭山市已颁发安全生产许可证企业情况统计表</th>
+                        <tr>
+                            <th rowspan="2">项目</th>
+                            <th rowspan="2">企业数量</th>
+                            <th rowspan="2">许可证数量</th>
+                            <th colspan="5">金属矿山</th>
+                            <th colspan="8">非金属矿山</th>
+                        </tr>
+                        <tr>
+                            <th>铅锌</th>
+                            <th>铁</th>
+                            <th>铜</th>
+                            <th>金</th>
+                            <th>钼</th>
+                            <th>膨润土</th>
+                            <th>大理岩</th>
+                            <th>石灰岩</th>
+                            <th>石英</th>
+                            <th>建筑石料</th>
+                            <th>石墨</th>
+                            <th>硅(矽)线石</th>
+                        </tr>
+                        <tr class="sysempty">
+                            <th class="projectTitle"><a class="sysUnder">地下矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sysempty">
+                            <th class="projectTitle"><a class="sysOpen">露天矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sysempty">
+                            <th class="projectTitle"><a class="sysStone">小型露天采石场</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sysempty">
+                            <th class="projectTitle"><a class="sysOil">石油天然气开采企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sysempty">
+                            <th class="projectTitle"><a class="sysExcavate">采掘施工企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sysempty">
+                            <th class="projectTitle"><a class="sysExplore">地址勘探企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sysempty">
+                            <th class="projectTitle"><a class="sysTailing">尾矿库</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sysempty">
+                            <th class="projectTitle">合计</th>
+                            <td class="sum1"></td>
+                            <td class="sum2"></td>
+                            <td class="sum3"></td>
+                            <td class="sum4"></td>
+                            <td class="sum5"></td>
+                            <td class="sum6"></td>
+                            <td class="sum7"></td>
+                            <td class="sum8"></td>
+                            <td class="sum9"></td>
+                            <td class="sum10"></td>
+                            <td class="sum11"></td>
+                            <td class="sum12"></td>
+                            <td class="sum13"></td>
+                            <td class="sum14"></td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-info span3" style="margin-bottom:40px;">导出Excel</button>
+                </div>
+                <div class="tab-pane fade" id="tab8">
+                    <table class="table">
+                        <th colspan="16">伊春市已颁发安全生产许可证企业情况统计表</th>
+                        <tr>
+                            <th rowspan="2">项目</th>
+                            <th rowspan="2">企业数量</th>
+                            <th rowspan="2">许可证数量</th>
+                            <th colspan="5">金属矿山</th>
+                            <th colspan="8">非金属矿山</th>
+                        </tr>
+                        <tr>
+                            <th>铅锌</th>
+                            <th>铁</th>
+                            <th>铜</th>
+                            <th>金</th>
+                            <th>钼</th>
+                            <th>膨润土</th>
+                            <th>大理岩</th>
+                            <th>石灰岩</th>
+                            <th>石英</th>
+                            <th>建筑石料</th>
+                            <th>石墨</th>
+                            <th>硅(矽)线石</th>
+                        </tr>
+                        <tr class="ycempty">
+                            <th class="projectTitle"><a class="ycUnder">地下矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="ycempty">
+                            <th class="projectTitle"><a class="ycOpen">露天矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="ycempty">
+                            <th class="projectTitle"><a class="ycStone">小型露天采石场</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="ycempty">
+                            <th class="projectTitle"><a class="ycOil">石油天然气开采企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="ycempty">
+                            <th class="projectTitle"><a class="ycExcavate">采掘施工企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="ycempty">
+                            <th class="projectTitle"><a class="ycExplore">地址勘探企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="ycempty">
+                            <th class="projectTitle"><a class="ycTailing">尾矿库</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="ycempty">
+                            <th class="projectTitle">合计</th>
+                            <td class="sum1"></td>
+                            <td class="sum2"></td>
+                            <td class="sum3"></td>
+                            <td class="sum4"></td>
+                            <td class="sum5"></td>
+                            <td class="sum6"></td>
+                            <td class="sum7"></td>
+                            <td class="sum8"></td>
+                            <td class="sum9"></td>
+                            <td class="sum10"></td>
+                            <td class="sum11"></td>
+                            <td class="sum12"></td>
+                            <td class="sum13"></td>
+                            <td class="sum14"></td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-info span3" style="margin-bottom:40px;">导出Excel</button>
+                </div>
+                <div class="tab-pane fade" id="tab9">
+                    <table class="table">
+                        <th colspan="16">七台河市已颁发安全生产许可证企业情况统计表</th>
+                        <tr>
+                            <th rowspan="2">项目</th>
+                            <th rowspan="2">企业数量</th>
+                            <th rowspan="2">许可证数量</th>
+                            <th colspan="5">金属矿山</th>
+                            <th colspan="8">非金属矿山</th>
+                        </tr>
+                        <tr>
+                            <th>铅锌</th>
+                            <th>铁</th>
+                            <th>铜</th>
+                            <th>金</th>
+                            <th>钼</th>
+                            <th>膨润土</th>
+                            <th>大理岩</th>
+                            <th>石灰岩</th>
+                            <th>石英</th>
+                            <th>建筑石料</th>
+                            <th>石墨</th>
+                            <th>硅(矽)线石</th>
+                        </tr>
+                        <tr class="qthempty">
+                            <th class="projectTitle"><a class="qthUnder">地下矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="qthempty">
+                            <th class="projectTitle"><a class="qthOpen">露天矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="qthempty">
+                            <th class="projectTitle"><a class="qthStone">小型露天采石场</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="qthempty">
+                            <th class="projectTitle"><a class="qthOil">石油天然气开采企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="qthempty">
+                            <th class="projectTitle"><a class="qthExcavate">采掘施工企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="qthempty">
+                            <th class="projectTitle"><a class="qthExplore">地址勘探企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="qthempty">
+                            <th class="projectTitle"><a class="qthTailing">尾矿库</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="qthempty">
+                            <th class="projectTitle">合计</th>
+                            <td class="sum1"></td>
+                            <td class="sum2"></td>
+                            <td class="sum3"></td>
+                            <td class="sum4"></td>
+                            <td class="sum5"></td>
+                            <td class="sum6"></td>
+                            <td class="sum7"></td>
+                            <td class="sum8"></td>
+                            <td class="sum9"></td>
+                            <td class="sum10"></td>
+                            <td class="sum11"></td>
+                            <td class="sum12"></td>
+                            <td class="sum13"></td>
+                            <td class="sum14"></td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-info span3" style="margin-bottom:40px;">导出Excel</button>
+                </div>
+                <div class="tab-pane fade" id="tab10">
+                    <table class="table">
+                        <th colspan="16">鹤岗市已颁发安全生产许可证企业情况统计表</th>
+                        <tr>
+                            <th rowspan="2">项目</th>
+                            <th rowspan="2">企业数量</th>
+                            <th rowspan="2">许可证数量</th>
+                            <th colspan="5">金属矿山</th>
+                            <th colspan="8">非金属矿山</th>
+                        </tr>
+                        <tr>
+                            <th>铅锌</th>
+                            <th>铁</th>
+                            <th>铜</th>
+                            <th>金</th>
+                            <th>钼</th>
+                            <th>膨润土</th>
+                            <th>大理岩</th>
+                            <th>石灰岩</th>
+                            <th>石英</th>
+                            <th>建筑石料</th>
+                            <th>石墨</th>
+                            <th>硅(矽)线石</th>
+                        </tr>
+                        <tr class="hgempty">
+                            <th class="projectTitle"><a class="hgUnder">地下矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hgempty">
+                            <th class="projectTitle"><a class="hgOpen">露天矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hgempty">
+                            <th class="projectTitle"><a class="hgStone">小型露天采石场</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hgempty">
+                            <th class="projectTitle"><a class="hgOil">石油天然气开采企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hgempty">
+                            <th class="projectTitle"><a class="hgExcavate">采掘施工企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hgempty">
+                            <th class="projectTitle"><a class="hgExplore">地址勘探企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hgempty">
+                            <th class="projectTitle"><a class="hgTailing">尾矿库</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hgempty">
+                            <th class="projectTitle">合计</th>
+                            <td class="sum1"></td>
+                            <td class="sum2"></td>
+                            <td class="sum3"></td>
+                            <td class="sum4"></td>
+                            <td class="sum5"></td>
+                            <td class="sum6"></td>
+                            <td class="sum7"></td>
+                            <td class="sum8"></td>
+                            <td class="sum9"></td>
+                            <td class="sum10"></td>
+                            <td class="sum11"></td>
+                            <td class="sum12"></td>
+                            <td class="sum13"></td>
+                            <td class="sum14"></td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-info span3" style="margin-bottom:40px;">导出Excel</button>
+                </div>
+                <div class="tab-pane fade" id="tab11">
+                    <table class="table">
+                        <th colspan="16">黑河市已颁发安全生产许可证企业情况统计表</th>
+                        <tr>
+                            <th rowspan="2">项目</th>
+                            <th rowspan="2">企业数量</th>
+                            <th rowspan="2">许可证数量</th>
+                            <th colspan="5">金属矿山</th>
+                            <th colspan="8">非金属矿山</th>
+                        </tr>
+                        <tr>
+                            <th>铅锌</th>
+                            <th>铁</th>
+                            <th>铜</th>
+                            <th>金</th>
+                            <th>钼</th>
+                            <th>膨润土</th>
+                            <th>大理岩</th>
+                            <th>石灰岩</th>
+                            <th>石英</th>
+                            <th>建筑石料</th>
+                            <th>石墨</th>
+                            <th>硅(矽)线石</th>
+                        </tr>
+                        <tr class="hhempty">
+                            <th class="projectTitle"><a class="hhUnder">地下矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hhempty">
+                            <th class="projectTitle"><a class="hhOpen">露天矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hhempty">
+                            <th class="projectTitle"><a class="hhStone">小型露天采石场</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hhempty">
+                            <th class="projectTitle"><a class="hhOil">石油天然气开采企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hhempty">
+                            <th class="projectTitle"><a class="hhExcavate">采掘施工企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hhempty">
+                            <th class="projectTitle"><a class="hhExplore">地址勘探企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hhempty">
+                            <th class="projectTitle"><a class="hhTailing">尾矿库</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="hhempty">
+                            <th class="projectTitle">合计</th>
+                            <td class="sum1"></td>
+                            <td class="sum2"></td>
+                            <td class="sum3"></td>
+                            <td class="sum4"></td>
+                            <td class="sum5"></td>
+                            <td class="sum6"></td>
+                            <td class="sum7"></td>
+                            <td class="sum8"></td>
+                            <td class="sum9"></td>
+                            <td class="sum10"></td>
+                            <td class="sum11"></td>
+                            <td class="sum12"></td>
+                            <td class="sum13"></td>
+                            <td class="sum14"></td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-info span3" style="margin-bottom:40px;">导出Excel</button>
+                </div>
+                <div class="tab-pane fade" id="tab12">
+                    <table class="table">
+                        <th colspan="16">绥化市已颁发安全生产许可证企业情况统计表</th>
+                        <tr>
+                            <th rowspan="2">项目</th>
+                            <th rowspan="2">企业数量</th>
+                            <th rowspan="2">许可证数量</th>
+                            <th colspan="5">金属矿山</th>
+                            <th colspan="8">非金属矿山</th>
+                        </tr>
+                        <tr>
+                            <th>铅锌</th>
+                            <th>铁</th>
+                            <th>铜</th>
+                            <th>金</th>
+                            <th>钼</th>
+                            <th>膨润土</th>
+                            <th>大理岩</th>
+                            <th>石灰岩</th>
+                            <th>石英</th>
+                            <th>建筑石料</th>
+                            <th>石墨</th>
+                            <th>硅(矽)线石</th>
+                        </tr>
+                        <tr class="shempty">
+                            <th class="projectTitle"><a class="shUnder">地下矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="shempty">
+                            <th class="projectTitle"><a class="shOpen">露天矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="shempty">
+                            <th class="projectTitle"><a class="shStone">小型露天采石场</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="shempty">
+                            <th class="projectTitle"><a class="shOil">石油天然气开采企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="shempty">
+                            <th class="projectTitle"><a class="shExcavate">采掘施工企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="shempty">
+                            <th class="projectTitle"><a class="shExplore">地址勘探企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="shempty">
+                            <th class="projectTitle"><a class="shTailing">尾矿库</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="shmpty">
+                            <th class="projectTitle">合计</th>
+                            <td class="sum1"></td>
+                            <td class="sum2"></td>
+                            <td class="sum3"></td>
+                            <td class="sum4"></td>
+                            <td class="sum5"></td>
+                            <td class="sum6"></td>
+                            <td class="sum7"></td>
+                            <td class="sum8"></td>
+                            <td class="sum9"></td>
+                            <td class="sum10"></td>
+                            <td class="sum11"></td>
+                            <td class="sum12"></td>
+                            <td class="sum13"></td>
+                            <td class="sum14"></td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-info span3" style="margin-bottom:40px;">导出Excel</button>
+                </div>
+                <div class="tab-pane fade" id="tab13">
+                    <table class="table">
+                        <th colspan="16">大兴安岭地区已颁发安全生产许可证企业情况统计表</th>
+                        <tr>
+                            <th rowspan="2">项目</th>
+                            <th rowspan="2">企业数量</th>
+                            <th rowspan="2">许可证数量</th>
+                            <th colspan="5">金属矿山</th>
+                            <th colspan="8">非金属矿山</th>
+                        </tr>
+                        <tr>
+                            <th>铅锌</th>
+                            <th>铁</th>
+                            <th>铜</th>
+                            <th>金</th>
+                            <th>钼</th>
+                            <th>膨润土</th>
+                            <th>大理岩</th>
+                            <th>石灰岩</th>
+                            <th>石英</th>
+                            <th>建筑石料</th>
+                            <th>石墨</th>
+                            <th>硅(矽)线石</th>
+                        </tr>
+                        <tr class="dxalempty">
+                            <th class="projectTitle"><a class="dxalUnder">地下矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="dxalempty">
+                            <th class="projectTitle"><a class="dxalOpen">露天矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="dxalempty">
+                            <th class="projectTitle"><a class="dxalStone">小型露天采石场</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="dxalempty">
+                            <th class="projectTitle"><a class="dxalOil">石油天然气开采企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="dxalempty">
+                            <th class="projectTitle"><a class="dxalExcavate">采掘施工企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="dxalempty">
+                            <th class="projectTitle"><a class="dxalExplore">地址勘探企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="dxalempty">
+                            <th class="projectTitle"><a class="dxalTailing">尾矿库</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="dxalempty">
+                            <th class="projectTitle">合计</th>
+                            <td class="sum1"></td>
+                            <td class="sum2"></td>
+                            <td class="sum3"></td>
+                            <td class="sum4"></td>
+                            <td class="sum5"></td>
+                            <td class="sum6"></td>
+                            <td class="sum7"></td>
+                            <td class="sum8"></td>
+                            <td class="sum9"></td>
+                            <td class="sum10"></td>
+                            <td class="sum11"></td>
+                            <td class="sum12"></td>
+                            <td class="sum13"></td>
+                            <td class="sum14"></td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-info span3" style="margin-bottom:40px;">导出Excel</button>
+                </div>
+                <div class="tab-pane fade" id="tab14">
+                    <table class="table">
+                        <th colspan="16">农垦总局已颁发安全生产许可证企业情况统计表</th>
+                        <tr>
+                            <th rowspan="2">项目</th>
+                            <th rowspan="2">企业数量</th>
+                            <th rowspan="2">许可证数量</th>
+                            <th colspan="5">金属矿山</th>
+                            <th colspan="8">非金属矿山</th>
+                        </tr>
+                        <tr>
+                            <th>铅锌</th>
+                            <th>铁</th>
+                            <th>铜</th>
+                            <th>金</th>
+                            <th>钼</th>
+                            <th>膨润土</th>
+                            <th>大理岩</th>
+                            <th>石灰岩</th>
+                            <th>石英</th>
+                            <th>建筑石料</th>
+                            <th>石墨</th>
+                            <th>硅(矽)线石</th>
+                        </tr>
+                        <tr class="nkzjempty">
+                            <th class="projectTitle"><a class="nkzjUnder">地下矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="nkzjempty">
+                            <th class="projectTitle"><a class="nkzjOpen">露天矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="nkzjempty">
+                            <th class="projectTitle"><a class="nkzjStone">小型露天采石场</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="nkzjempty">
+                            <th class="projectTitle"><a class="nkzjOil">石油天然气开采企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="nkzjempty">
+                            <th class="projectTitle"><a class="nkzjExcavate">采掘施工企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="nkzjempty">
+                            <th class="projectTitle"><a class="nkzjExplore">地址勘探企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="nkzjempty">
+                            <th class="projectTitle"><a class="nkzjTailing">尾矿库</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="nkzjempty">
+                            <th class="projectTitle">合计</th>
+                            <td class="sum1"></td>
+                            <td class="sum2"></td>
+                            <td class="sum3"></td>
+                            <td class="sum4"></td>
+                            <td class="sum5"></td>
+                            <td class="sum6"></td>
+                            <td class="sum7"></td>
+                            <td class="sum8"></td>
+                            <td class="sum9"></td>
+                            <td class="sum10"></td>
+                            <td class="sum11"></td>
+                            <td class="sum12"></td>
+                            <td class="sum13"></td>
+                            <td class="sum14"></td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-info span3" style="margin-bottom:40px;">导出Excel</button>
+                </div>
+                <div class="tab-pane fade" id="tab15">
+                    <table class="table">
+                        <th colspan="16">森工总局已颁发安全生产许可证企业情况统计表</th>
+                        <tr>
+                            <th rowspan="2">项目</th>
+                            <th rowspan="2">企业数量</th>
+                            <th rowspan="2">许可证数量</th>
+                            <th colspan="5">金属矿山</th>
+                            <th colspan="8">非金属矿山</th>
+                        </tr>
+                        <tr>
+                            <th>铅锌</th>
+                            <th>铁</th>
+                            <th>铜</th>
+                            <th>金</th>
+                            <th>钼</th>
+                            <th>膨润土</th>
+                            <th>大理岩</th>
+                            <th>石灰岩</th>
+                            <th>石英</th>
+                            <th>建筑石料</th>
+                            <th>石墨</th>
+                            <th>硅(矽)线石</th>
+                        </tr>
+                        <tr class="sgzjempty">
+                            <th class="projectTitle"><a class="sgzjUnder">地下矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sgzjempty">
+                            <th class="projectTitle"><a class="sgzjOpen">露天矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sgzjempty">
+                            <th class="projectTitle"><a class="sgzjStone">小型露天采石场</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sgzjempty">
+                            <th class="projectTitle"><a class="sgzjOil">石油天然气开采企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sgzjempty">
+                            <th class="projectTitle"><a class="sgzjExcavate">采掘施工企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sgzjempty">
+                            <th class="projectTitle"><a class="sgzjExplore">地址勘探企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sgzjempty">
+                            <th class="projectTitle"><a class="sgzjTailing">尾矿库</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sgzjempty">
+                            <th class="projectTitle">合计</th>
+                            <td class="sum1"></td>
+                            <td class="sum2"></td>
+                            <td class="sum3"></td>
+                            <td class="sum4"></td>
+                            <td class="sum5"></td>
+                            <td class="sum6"></td>
+                            <td class="sum7"></td>
+                            <td class="sum8"></td>
+                            <td class="sum9"></td>
+                            <td class="sum10"></td>
+                            <td class="sum11"></td>
+                            <td class="sum12"></td>
+                            <td class="sum13"></td>
+                            <td class="sum14"></td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-info span3" style="margin-bottom:40px;">导出Excel</button>
+                </div>
+                <div class="tab-pane fade" id="tab16">
+                    <table class="table">
+                        <th colspan="16">绥芬河市已颁发安全生产许可证企业情况统计表</th>
+                        <tr>
+                            <th rowspan="2">项目</th>
+                            <th rowspan="2">企业数量</th>
+                            <th rowspan="2">许可证数量</th>
+                            <th colspan="5">金属矿山</th>
+                            <th colspan="8">非金属矿山</th>
+                        </tr>
+                        <tr>
+                            <th>铅锌</th>
+                            <th>铁</th>
+                            <th>铜</th>
+                            <th>金</th>
+                            <th>钼</th>
+                            <th>膨润土</th>
+                            <th>大理岩</th>
+                            <th>石灰岩</th>
+                            <th>石英</th>
+                            <th>建筑石料</th>
+                            <th>石墨</th>
+                            <th>硅(矽)线石</th>
+                        </tr>
+                        <tr class="sfhempty">
+                            <th class="projectTitle"><a class="sfhUnder">地下矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sfhempty">
+                            <th class="projectTitle"><a class="sfhOpen">露天矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sfhempty">
+                            <th class="projectTitle"><a class="sfhStone">小型露天采石场</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sfhempty">
+                            <th class="projectTitle"><a class="sfhOil">石油天然气开采企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sfhempty">
+                            <th class="projectTitle"><a class="sfhExcavate">采掘施工企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sfhempty">
+                            <th class="projectTitle"><a class="sfhExplore">地址勘探企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sfhempty">
+                            <th class="projectTitle"><a class="sfhTailing">尾矿库</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="sfhempty">
+                            <th class="projectTitle">合计</th>
+                            <td class="sum1"></td>
+                            <td class="sum2"></td>
+                            <td class="sum3"></td>
+                            <td class="sum4"></td>
+                            <td class="sum5"></td>
+                            <td class="sum6"></td>
+                            <td class="sum7"></td>
+                            <td class="sum8"></td>
+                            <td class="sum9"></td>
+                            <td class="sum10"></td>
+                            <td class="sum11"></td>
+                            <td class="sum12"></td>
+                            <td class="sum13"></td>
+                            <td class="sum14"></td>
+                        </tr>
+                    </table>
+                    <button type="button" class="btn btn-info span3" style="margin-bottom:40px;">导出Excel</button>
+                </div>
+                <div class="tab-pane fade" id="tab17">
+                    <table class="table">
+                        <th colspan="16">抚远市已颁发安全生产许可证企业情况统计表</th>
+                        <tr>
+                            <th rowspan="2">项目</th>
+                            <th rowspan="2">企业数量</th>
+                            <th rowspan="2">许可证数量</th>
+                            <th colspan="5">金属矿山</th>
+                            <th colspan="8">非金属矿山</th>
+                        </tr>
+                        <tr>
+                            <th>铅锌</th>
+                            <th>铁</th>
+                            <th>铜</th>
+                            <th>金</th>
+                            <th>钼</th>
+                            <th>膨润土</th>
+                            <th>大理岩</th>
+                            <th>石灰岩</th>
+                            <th>石英</th>
+                            <th>建筑石料</th>
+                            <th>石墨</th>
+                            <th>硅(矽)线石</th>
+                        </tr>
+                        <tr class="fyempty">
+                            <th class="projectTitle"><a class="fyUnder">地下矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="fyempty">
+                            <th class="projectTitle"><a class="fyOpen">露天矿山企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="fyempty">
+                            <th class="projectTitle"><a class="fyStone">小型露天采石场</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="fyempty">
+                            <th class="projectTitle"><a class="fyOil">石油天然气开采企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="fyempty">
+                            <th class="projectTitle"><a class="fyExcavate">采掘施工企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="fyempty">
+                            <th class="projectTitle"><a class="fyExplore">地址勘探企业</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="fyempty">
+                            <th class="projectTitle"><a class="fyTailing">尾矿库</a></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="fyempty">
+                            <th class="projectTitle">合计</th>
+                            <td class="sum1"></td>
+                            <td class="sum2"></td>
+                            <td class="sum3"></td>
+                            <td class="sum4"></td>
+                            <td class="sum5"></td>
+                            <td class="sum6"></td>
+                            <td class="sum7"></td>
+                            <td class="sum8"></td>
+                            <td class="sum9"></td>
+                            <td class="sum10"></td>
+                            <td class="sum11"></td>
+                            <td class="sum12"></td>
+                            <td class="sum13"></td>
+                            <td class="sum14"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popbox">
+    </div>
+</body>
+</html>

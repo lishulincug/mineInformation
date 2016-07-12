@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黑龙江省非煤矿山行政许可管理系统</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/commend.css">
+    <link type="text/css" href="static/js/zTree/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/commend.js"></script>
+    <script type="text/javascript" src="static/js/expired.js"></script>
+    <style type="text/css">
+    .center table, .pagination{
+    	margin-left:0px;
+    }
+    </style>
+</head>
+<body>
+    <div id="nav" style="">
+    </div>
+    <div class="center control">
+        <div class="control-group">
+            <span>持证单位:</span><input type="text" class="companyname">
+            <!-- <span>地区:</span>
+            <select class="area">
+                <option value="1923010000">哈尔滨</option>
+                <option value="1923020000">齐齐哈尔</option>
+                <option value="1923030000">鸡西</option>
+                <option value="1923040000">鹤岗</option>
+                <option value="1923050000">双鸭山</option>
+                <option value="1923070000">伊春</option>
+                <option value="1923090000">七台河</option>
+                <option value="1923100000">牡丹江</option>
+                <option value="1923110000">黑河</option>
+                <option value="1923120000">绥化</option>
+                <option value="1923270000">大兴安岭地区</option>
+                <option value="1923280000">农垦总局</option>
+                <option value="1923290000">森工总局</option>
+            </select> -->
+        </div>
+        <div class="control-group expire">
+            <a href="" class="btn">查询</a>
+            <a class="btn" onclick = "getExcel();return false;">导出Excel</a>
+            <hr>
+        </div>
+        <ul class="nav nav-tabs" id="myTab">
+        	<li class="active"><a href="#safety">安全许可证</a></li>
+        	<li><a href="#mining">采矿许可证</a></li>
+        </ul>
+        <div class="tab-content control-group">
+        	<div class="tab-pane active" id="safety">
+        		<div id="esafety"></div>
+        	</div>
+        	<div class="tab-pane" id="mining">
+        		<div id="emining"></div>
+        	</div>
+        </div>
+    </div>
+    <div class="popbox">
+        <div id="expire" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:none;width: 480px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="myModalLabel">提醒期限</h4>
+            </div>
+            <div class="modal-body control">
+                <div class="control-group">
+                    <span>安全许可证:</span><input type="text" class="safety">
+                </div>
+                <div class="control-group">
+                    <span>采矿许可证:</span><input type="text" class="mining">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal">关闭</button>
+                <button class="btn btn-primary" data-dismiss="modal">确定</button>
+            </div>
+        </div>
+    </div>
+    <div id="footer" style="">
+        <span class="user">操作员:</span>
+    </div>
+</body>
+<script type="text/javascript">
+	$('#myTab a').click(function(e){
+		e.preventDefault();
+		$(this).tab('show');
+	})
+	var height = $(window).height();
+	$('.tab-content').height(height - $('.center>.control-group').eq(0).height()-$('.center>.control-group').eq(1).height()-$('.nav').height() - 130)
+</script>
+</html>

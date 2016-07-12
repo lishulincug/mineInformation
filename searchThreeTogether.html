@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黑龙江省非煤矿山安全许可证系统</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/commend.css">
+    <link type="text/css" href="static/js/zTree/zTreeStyle/zTreeStyle.css" rel="stylesheet" />
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/commend.js"></script>
+    <script type="text/javascript" src="static/js/searchThreeTogether.js"></script>
+</head>
+<body>
+    <div id="nav" style="">
+    </div>
+    <div class="popbox">
+    	<div id="changeAlert" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:750px;">
+    		<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        		<h3 id="myModalLabel">三同时设计修改</h3>
+    		</div>
+    		<div class="modal-body">
+        	<table class="table table-bordered table-condensed">
+           		<tr>
+                	<td class="tdTitle">批复时间</td>
+                	<td><input type="text" class="replyTime" id="replyTime"></td>
+                	<td class="tdTitle">批复文号</td>
+                	<td><input type="text" class="form-control" id="replyNumber"></td>
+            	</tr>
+            	<tr>
+                	<td class="tdTitle">受理人</td>
+                	<td><input type="text" class="form-control" id="specialManager"></td>
+                	<td class="tdTitle">业务办理人</td>
+                	<td><input type="text" class="form-control" id="bussinessManager"></td>
+            	</tr>
+            	<tr>
+                	<td class="tdTitle">综合审批</td>
+                	<td><input type="text" class="form-control" id="approval"></td>
+                	<td class="tdTitle">专家</td>
+                	<td><input type="text" class="form-control" id="professor"></td>
+            	</tr>
+            	<tr>
+                	<td class="tdTitle">处室负责人</td>
+                	<td><input type="text" class="form-control" id="officeHeader"></td>
+                	<td class="tdTitle">主管领导</td>
+                	<td><input type="text" class="form-control" id="leader"></td>
+            	</tr>
+            	<tr>
+                	<td class="tdTitle">建设类型</td>
+                	<td><select type="text" class="form-control" id="buildType">
+                    	<option value="新">新</option>
+                    	<option value="扩">扩</option>
+                    	<option value="改">改</option>
+                	</select></td>
+                	<td class="tdTitle">立项审批单位</td>
+                	<td><input type="text" class="form-control" id="approvalCompany"></td>
+            	</tr>
+            	<tr>
+                	<td class="tdTitle">立项审批日期</td>
+                	<td><input type="text" class="approvalDate" id="approvalDate"></td>
+                	<td class="tdTitle">设计编制单位</td>
+                	<td><input type="text" class="form-control" id="designCompany"></td>
+            	</tr>
+            	<tr>
+                	<td class="tdTitle">设置单位资质</td>
+                	<td><input type="text" class="form-control" id="cmopanyIntelligence"></td>
+                	<td class="tdTitle">变更详情</td>
+                	<td><input type="text" class="form-control" id="changeInfo"></td>
+            	</tr>
+            	<tr>
+                	<td class="tdTitle">竣工审批时间</td>
+                	<td><input type="text" class="completedTime" id="completedTime"></td>
+                	<td class="tdTitle">竣工状态</td>
+                	<td><input type="text" class="form-control" id="completedState"></td>
+            	</tr>
+            	<tr>
+            		<td class="tdTitle">修改备注</td>
+            		<td colspan="3"><textarea cols="20" rows="10" style="width:555px;height:80px;" id="changeRemark"></textarea></td>
+            	</tr>
+            	<!--<tr>
+                	<td class="tdTitle">变更次数</td>
+                	<td id="changeNum"></td>
+                	<td></td>
+                	<td></td>
+            	</tr>-->
+        		</table>
+    		</div>
+    		<div class="modal-footer">
+       			<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+      		  	<button class="btn btn-primary changeSave">保存</button>
+    		</div>
+		</div>
+		<div id="InfoAlert" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:750px;">
+    		<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        		<h3 id="myModalLabel">三同时设计修改</h3>
+    		</div>
+    		<div class="modal-body">
+        	<table class="table table-bordered table-condensed">
+           		<tr>
+                	<td class="tdTitle">批复时间</td>
+                	<td><input type="text" class="replyTime" id="replyTime"></td>
+                	<td class="tdTitle">批复文号</td>
+                	<td><input type="text" class="form-control replyNumber" id="replyNumber"></td>
+            	</tr>
+            	<tr>
+                	<td class="tdTitle">受理人</td>
+                	<td><input type="text" class="form-control specialManager" id="specialManager"></td>
+                	<td class="tdTitle">业务办理人</td>
+                	<td><input type="text" class="form-control bussinessManager" id="bussinessManager"></td>
+            	</tr>
+            	<tr>
+                	<td class="tdTitle">综合审批</td>
+                	<td><input type="text" class="form-control approval" id="approval"></td>
+                	<td class="tdTitle">专家</td>
+                	<td><input type="text" class="form-control professor" id="professor"></td>
+            	</tr>
+            	<tr>
+                	<td class="tdTitle">处室负责人</td>
+                	<td><input type="text" class="form-control officeHeader" id="officeHeader"></td>
+                	<td class="tdTitle">主管领导</td>
+                	<td><input type="text" class="form-control leader" id="leader"></td>
+            	</tr>
+            	<tr>
+                	<td class="tdTitle">建设类型</td>
+                	<td><select type="text" class="form-control buildType" id="buildType">
+                    	<option value="新">新</option>
+                    	<option value="扩">扩</option>
+                    	<option value="改">改</option>
+                	</select></td>
+                	<td class="tdTitle">立项审批单位</td>
+                	<td><input type="text" class="form-control approvalCompany" id="approvalCompany"></td>
+            	</tr>
+            	<tr>
+                	<td class="tdTitle">立项审批日期</td>
+                	<td><input type="text" class="approvalDate approvalDate" id="approvalDate"></td>
+                	<td class="tdTitle">设计编制单位</td>
+                	<td><input type="text" class="form-control designCompany" id="designCompany"></td>
+            	</tr>
+            	<tr>
+                	<td class="tdTitle">设置单位资质</td>
+                	<td><input type="text" class="form-control cmopanyIntelligence" id="cmopanyIntelligence"></td>
+                	<td class="tdTitle">变更详情</td>
+                	<td><input type="text" class="form-control changeInfo" id="changeInfo"></td>
+            	</tr>
+            	<tr>
+                	<td class="tdTitle">竣工审批时间</td>
+                	<td><input type="text" class="completedTime completedTime" id="completedTime"></td>
+                	<td class="tdTitle">竣工状态</td>
+                	<td><input type="text" class="form-control completedState" id="completedState"></td>
+            	</tr>
+            	<!--<tr>
+                	<td class="tdTitle">变更次数</td>
+                	<td id="changeNum"></td>
+                	<td></td>
+                	<td></td>
+            	</tr>-->
+        		</table>
+    		</div>
+    		<div class="modal-footer">
+       			<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+    		</div>
+		</div>
+    </div>
+    <div class="center control">
+        <div id="company">
+            <div class="control-group">
+                <input type="text" style="margin-top: 5px;" placeholder="单位名称" class="companyquery">
+                <a class="btn select">查询</a>
+            </div>
+            <div class="control-group">
+                <a class="btn disabled details">详情</a>
+                <a class="btn disabled revise">修改</a>
+                <a class="btn getExcel">导出Excel</a>
+            </div>
+            <hr/>
+        </div>
+        <ul class="nav nav-tabs" id="myTab">
+        	<li class="active"><a href="#metalTable" class="metal">地下矿山企业</a></li>
+        	<li><a href="#openTable" class="open">露天矿山企业</a></li>
+        	<li><a href="#stoneTable" class="stone">小型露天采石场</a></li>
+        	<li><a href="#oilTable" class="oil">石油天然气</a></li>
+        	<li><a href="#tailingTable" class="tailing">尾矿库</a></li>
+        </ul>
+        <div class="tab-content control-group">
+        	<div class="tab-pane active" id="metalTable">
+        		<div id="wesafety"></div>
+        	</div>
+        	<div class="tab-pane" id="openTable">
+        		<div id="weining"></div>
+        	</div>
+        	<div class="tab-pane" id="stoneTable">
+        		<div id="wmning"></div>
+        	</div>
+        	<div class="tab-pane" id="oilTable">
+        		<div id="weming"></div>
+        	</div>
+        	<div class="tab-pane" id="tailingTable">
+        		<div id="wemnng"></div>
+        	</div>
+        </div>
+    </div>
+    
+    <div id="footer" style="">
+        <span class="user">操作员:</span>
+    </div>
+</body>
+<script type="text/javascript">
+    $('#myTab a').click(function(e){
+		e.preventDefault();
+		$(this).tab('show');
+	})
+</script>
+</html>

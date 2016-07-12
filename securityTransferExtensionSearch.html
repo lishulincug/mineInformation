@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黑龙江省非煤矿山安全许可证系统</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/commend.css">
+    <link rel="stylesheet" type="text/css" href="static/css/laydate.css">
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/commend.js"></script>
+    <script type="text/javascript" src="static/js/searchCommend.js"></script>
+</head>
+    <!-- 许可证变更延期查询 -->
+<body>
+    <div id="nav" class="" style="">
+    </div>
+    <div class="center control" style="">
+        <div class="centerindex control-group" id="userlog" style="margin-top: 20px;">
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="control-group" >
+                        <span>持证单位:</span>
+                        <input type="text" class="usercompany" style="width: 498px;"/>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="control-group" >
+                        <span>业务类型:</span>
+                        <select class="form-control" id="businessType" style="width: 214px;">
+                            <option value="">全部</option>
+                            <option value="延期">延期</option>
+                            <option value="变更">变更</option>
+                        </select>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span>业务状态:</span>
+                        <select class="form-control" id="type" style="width: 214px;">
+                            <option value="">全部</option>
+                            <option value="待发">待发</option>
+                            <option value="拒发">拒发</option>
+                            <option value="已发">已发</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <button class="btn btn-primary" id="securityTransferTableButton" style="width:100px;">查询</button>
+                <button class="btn btn-primary" id="securityTransfergetExcel" style="width:100px;">导出Excel</button>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <frame></frame>
+    <!-- <div id="userlog"></div> -->
+    <div class="popbox">
+    </div>
+</body>
+</html>

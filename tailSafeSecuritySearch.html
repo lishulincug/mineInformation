@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黑龙江省非煤矿山安全许可证系统</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/commend.css">
+    <link rel="stylesheet" type="text/css" href="static/css/laydate.css">
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/commend.js"></script>
+    <script type="text/javascript" src="static/js/searchCommend.js"></script>
+</head>
+<body>
+    <!-- 尾矿库许可证组合查询 -->
+    <div id="nav" class="" style="">
+    </div>
+    <div class="popbox"></div>
+    <div class="center control" style="">
+        <div class="centerindex control-group" id="userlog" style="margin-top: 20px;">
+            <div class="row-fluid">
+                <div class="span4">
+                    <div class="control-group">
+                        <span>企业名称:</span>
+                        <input type="text" class="usercompany" style="width: 300px;"/>
+                    </div>
+                    <!--<div class="control-group">
+                        <span>取证单位名称:</span>
+                        <input type="text" class="getcompany" style="width: 300px;"/>
+                    </div>-->
+                    <div class="control-group" >
+                       <!--<span>主体矿山:</span>
+                        <select class="form-control" style="width: 138px;" id="importantMine">
+                            <option value="">全部</option>
+                            <option value="有">有</option>
+                            <option value="无">无</option>
+                        </select>&nbsp;&nbsp;&nbsp;-->
+                        <span>库类型:</span>
+                        <select class="form-control" id="bankType" style="width: 330px;">
+                            <option value="">选择库类型</option>
+                            <option value="山谷型">山谷型</option>
+                            <option value="傍山型">傍山型</option>
+                            <option value="平地型">平地型</option>
+                            <option value="截河型">截河型</option>
+                        </select>
+                    </div>
+                    <div class="control-group" >
+                        <button class="btn btn-primary" id="tailSafeSecurityTableButton" style="width:100px;">查询</button>
+                        <button class="btn btn-primary" id="tailSafeSecuritygetExcel" style="width:100px;">导出Excel</button>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="control-group" >
+                        <span>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区:</span>
+                        <select class="form-control"  id="heilongjiang"  placeholder="请选择" style="width: 314px;">
+                            <option value="0" name="0">请选择</option>
+                            <option value="1923010100" name="haerbin">哈尔滨市</option>
+                            <option value="1923020100" name="qiqihaer">齐齐哈尔市</option>
+                            <option value="1923030100" name="jixi">鸡西市</option>
+                            <option value="1923040100" name="hegang">鹤岗市</option>
+                            <option value="1923050100" name="shuangyashan">双鸭山市</option>
+                            <option value="1923060100" name="daqing">大庆市</option>
+                            <option value="1923070100" name="yichun">伊春市</option>
+                            <option value="1923080100" name="jiamusi">佳木斯市</option>
+                            <option value="1923090100" name="qitaihe">七台河市</option>
+                            <option value="1923100100" name="mudanjiang">牡丹江市</option>
+                            <option value="1923110100" name="heihe">黑河市</option>
+                            <option value="1923230100" name="suihua">绥化市</option>
+                            <option value="1923270100" name="daxinganling">大兴安岭地区</option>
+                            <option value="1923280100" name="nongkenzongju">农垦总局</option>
+                            <option value="1923290100" name="shengongzongju">森工总局</option>
+                        </select><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <select class="form-control 0" style="width: 314px;">
+                        	<option value=""></option>
+                        </select>
+                        <select class="form-control haerbin" style="width: 314px;">
+                            <option value="1923010100">市辖区</option>
+                            <option value="1923010200">道里区</option>
+                            <option value="1923010300">南岗区</option>
+                            <option value="1923010400">道外区</option>
+                            <option value="1923010600">香坊区</option>
+                            <option value="1923010700">动力区</option>
+                            <option value="1923010800">平房区</option>
+                            <option value="1923010900">松北区</option>
+                            <option value="1923011100">呼兰区</option>
+                            <option value="1923012300">依兰县</option>
+                            <option value="1923012400">方正县</option>
+                            <option value="1923012500">宾县</option>
+                            <option value="1923012600">巴彦县</option>
+                            <option value="1923012700">木兰县</option>
+                            <option value="1923012800">通河县</option>
+                            <option value="1923012900">延寿县</option>
+                            <option value="1923018100">阿城市</option>
+                            <option value="1923018200">双城市</option>
+                            <option value="1923018300">尚志市</option>
+                            <option value="1923018400">五常市</option>
+                        </select>
+                        <select class="form-control qiqihaer" style="width: 314px;">
+                            <option value="1923020100">市辖区</option>
+                            <option value="1923020200">龙沙区</option>
+                            <option value="1923020300">建华区</option>
+                            <option value="1923020400">铁锋区</option>
+                            <option value="1923020500">昂昂溪区</option>
+                            <option value="1923020600">富拉尔基区</option>
+                            <option value="1923020700">碾子山区</option>
+                            <option value="1923020800">梅里斯达斡尔族区</option>
+                            <option value="1923022100">龙江县</option>
+                            <option value="1923022300">依安县</option>
+                            <option value="1923022400">泰来县</option>
+                            <option value="1923022500">甘南县</option>
+                            <option value="1923022700">富裕县</option>
+                            <option value="1923022900">克山县</option>
+                            <option value="1923023000">克东县</option>
+                            <option value="1923023100">拜泉县</option>
+                            <option value="1923028100">讷河市</option>
+                        </select>
+                        <select class="form-control jixi" style="width: 314px;">
+                            <option value="1923030100">市辖区</option>
+                            <option value="1923030200">鸡冠区</option>
+                            <option value="1923030300">恒山区</option>
+                            <option value="1923030400">滴道区</option>
+                            <option value="1923030500">梨树区</option>
+                            <option value="1923030600">城子河区</option>
+                            <option value="1923030700">麻山区</option>
+                            <option value="1923032100">鸡东区</option>
+                            <option value="1923038100">虎林市</option>
+                            <option value="1923038200">密山市</option>
+                        </select>
+                        <select class="form-control hegang" style="width: 314px;">
+                            <option value="1923040100">市辖区</option>
+                            <option value="1923040200">向阳区</option>
+                            <option value="1923040300">工农区</option>
+                            <option value="1923040400">南山区</option>
+                            <option value="1923040500">兴安区</option>
+                            <option value="1923040600">东山区</option>
+                            <option value="1923040700">兴山区</option>
+                            <option value="1923042100">萝山区</option>
+                            <option value="1923042200">绥滨区</option>
+                        </select>
+                        <select class="form-control shuangyashan" style="width: 314px;">
+                            <option value="1923050100">市辖区</option>
+                            <option value="1923050200">尖山区</option>
+                            <option value="1923050300">岭东区</option>
+                            <option value="1923050500">四方台区</option>
+                            <option value="1923050600">宝山区</option>
+                            <option value="1923052100">集贤县</option>
+                            <option value="1923052200">友谊县</option>
+                            <option value="1923052300">宝清县</option>
+                            <option value="1923052400">饶河县</option>
+                        </select>
+                        <select class="form-control daqing" style="width: 314px;">
+                            <option value="1923060100">市辖区</option>
+                            <option value="1923060200">萨尔图市</option>
+                            <option value="1923060300">龙凤区</option>
+                            <option value="1923060400">让胡路区</option>
+                            <option value="1923060500">红岗区</option>
+                            <option value="1923060600">大同区</option>
+                            <option value="1923062100">肇州县</option>
+                            <option value="1923062200">肇源县</option>
+                            <option value="1923062300">林甸县</option>
+                            <option value="1923062400">杜尔伯特蒙古族自治县</option>
+                        </select>
+                        <select class="form-control yichun" style="width: 314px;">
+                            <option value="1923070100">市辖区</option>
+                            <option value="1923070200">伊春区</option>
+                            <option value="1923070300">南岔区</option>
+                            <option value="1923070400">友好区</option>
+                            <option value="1923070500">西林区</option>
+                            <option value="1923070600">翠峦区</option>
+                            <option value="1923070700">新青区</option>
+                            <option value="1923070800">美溪区</option>
+                            <option value="1923070900">金山屯区</option>
+                            <option value="1923071000">五营区</option>
+                            <option value="1923071100">乌马河区</option>
+                            <option value="1923071200">汤旺河区</option>
+                            <option value="1923071300">带岭区</option>
+                            <option value="1923071400">乌伊岭区</option>
+                            <option value="1923071500">红星区</option>
+                            <option value="1923071600">上甘岭区</option>
+                            <option value="1923072200">嘉荫县</option>
+                            <option value="1923078100">铁力区</option>
+                        </select>
+                        <select class="form-control jiamusi" style="width: 314px;">
+                            <option value="1923080100">市辖区</option>
+                            <option value="1923080300">向阳区</option>
+                            <option value="1923080400">前进区</option>
+                            <option value="1923080500">东风区</option>
+                            <option value="1923081100">郊区</option>
+                            <option value="1923082200">桦南区</option>
+                            <option value="1923082600">桦川区</option>
+                            <option value="1923082800">汤原区</option>
+                            <option value="1923083300">抚远县</option>
+                            <option value="1923088100">同江市</option>
+                            <option value="1923088200">富锦市</option>
+                        </select>
+                        <select class="form-control qitaihe" style="width: 314px;">
+                            <option value="1923090100">市辖区</option>
+                            <option value="1923090200">新兴区</option>
+                            <option value="1923090300">桃山区</option>
+                            <option value="1923090400">茄子河区</option>
+                            <option value="1923091000">勃利区</option>
+                        </select>
+                        <select class="form-control mudanjiang" style="width: 314px;">
+                            <option value="1923100100">市辖区</option>
+                            <option value="1923100200">东安区</option>
+                            <option value="1923100300">阳明区</option>
+                            <option value="1923100400">爱民区</option>
+                            <option value="1923100500">西安区</option>
+                            <option value="1923102400">东宁县</option>
+                            <option value="1923102500">林口县</option>
+                            <option value="1923108100">绥芬河市</option>
+                            <option value="1923108300">海林市</option>
+                            <option value="1923108400">宁安市</option>
+                            <option value="1923108500">穆棱市</option>
+                        </select>
+                        <select class="form-control heihe" style="width: 314px;">
+                            <option value="1923110100">市辖区</option>
+                            <option value="1923110200">爱辉区</option>
+                            <option value="1923112100">嫩江县</option>
+                            <option value="1923112300">逊克县</option>
+                            <option value="1923112400">孙吴县</option>
+                            <option value="1923118100">北安市</option>
+                            <option value="1923118200">五大连池市</option>
+                        </select>
+                        <select class="form-control suihua" style="width: 314px;">
+                            <option value="1923120100">市辖区</option>
+                            <option value="1923120200">北林区</option>
+                            <option value="1923122100">望奎县</option>
+                            <option value="1923122200">兰西县</option>
+                            <option value="1923122300">青冈县</option>
+                            <option value="1923122400">庆安县</option>
+                            <option value="1923122500">明水县</option>
+                            <option value="1923122600">绥棱县</option>
+                            <option value="1923128100">安达市</option>
+                            <option value="1923128200">肇东市</option>
+                            <option value="1923128300">海伦市</option>
+                        </select>
+                        <select class="form-control daxinganling" style="width: 314px;">
+                            <option value="1923272100">市辖区</option>
+                            <option value="1923272200">呼玛县</option>
+                            <option value="1923272300">塔河县</option>
+                            <option value="1923272400">漠河县</option>
+                            <option value="1923272500">加格达奇区</option>
+                            <option value="1923272600">呼中区</option>
+                            <option value="1923272700">新林区</option>
+                            <option value="1923272800">松岭区</option>
+                        </select>
+                        <select class="form-control nongkenzongju" style="width: 314px;">
+                            <option value="1923280100">哈尔滨分局</option>
+                            <option value="1923280200">齐齐哈尔分局</option>
+                            <option value="1923280300">牡丹江分局</option>
+                            <option value="1923280400">绥化分局</option>
+                            <option value="1923280500">北安分局</option>
+                            <option value="1923280600">宝泉岭分局</option>
+                            <option value="1923280700">红兴隆分局</option>
+                            <option value="1923280800">建三江分局</option>
+                            <option value="1923280900">九三分局</option>
+                        </select>
+                        <select class="form-control sengongzongju" style="width: 314px;">
+                            <option value="1923290100">双鸭山林业局</option>
+                            <option value="1923290200">鹤立林业局</option>
+                            <option value="1923290300">桦南林业局</option>
+                            <option value="1923290400">鹤北林业局</option>
+                            <option value="1923290500">清河林业局</option>
+                            <option value="1923290600">东方红林业局</option>
+                            <option value="1923290700">迎春林业局</option>
+                            <option value="1923290800">大海林林业局</option>
+                            <option value="1923290900">海林林业局</option>
+                            <option value="1923291000">柴河林业局</option>
+                            <option value="1923291100">东京城林业局</option>
+                            <option value="1923291200">林口林业局</option>
+                            <option value="1923291300">绥阳林业局</option>
+                            <option value="1923291400">八面通林业局</option>
+                            <option value="1923291500">穆棱林业局</option>
+                            <option value="1923291600">山河屯林业局</option>
+                            <option value="1923291700">通北林业局</option>
+                            <option value="1923291800">苇河林业局</option>
+                            <option value="1923291900">亚布力林业局</option>
+                            <option value="1923292000">方正林业局</option>
+                            <option value="1923292100">沾河林业局</option>
+                            <option value="1923292200">绥棱林业局</option>
+                            <option value="1923292300">兴隆林业局</option>
+                            <option value="1923292400">带岭林业局</option>
+                        </select>
+                    </div>
+                    <div class="control-group" >
+                        <span>经济类型:</span>
+                        <select class="form-control" id="economyType" style="width: 314px;">
+                            <option value="">全部</option>
+                            <option value="其他">其他</option>
+                            <option value="合伙企业">合伙企业</option>
+                            <option value="普通合伙">普通合伙</option>
+                            <option value="个人经营">个人经营</option>
+                            <option value="个人独资">个人独资</option>
+                            <option value="个体工商户（合伙）">个体工商户（合伙）</option>
+                            <option value="个体">个体</option>
+                            <option value="国有控股企业">国有控股企业</option>
+                            <option value="外资企业">外资企业</option>
+                            <option value="股份合作企业">股份合作企业</option>
+                            <option value="个体工商户">个体工商户</option>
+                            <option value="个体工商户（合伙）">个体工商户（合伙）</option>
+                            <option value="外商投资股份有限公司">外商投资股份有限公司</option>
+                            <option value="中外合作经营企业">中外合作经营企业</option>
+                            <option value="中外合资经营企业">中外合资经营企业</option>
+                            <option value="外商投资企业">外商投资企业</option>
+                            <option value="港澳台商投资股份有限公司">港澳台商投资股份有限公司</option>
+                            <option value="港澳台商独资经营企业">港澳台商独资经营企业</option>
+                            <option value="合作经营企业（港或澳台）">合作经营企业（港或澳台）</option>
+                            <option value="合资经营企业（港或澳台）">合资经营企业（港或澳台）</option>
+                            <option value="港澳台商投资企业">港澳台商投资企业</option>
+                            <option value="其他企业">其他企业</option>
+                            <option value="私营股份有限公司">私营股份有限公司</option>
+                            <option value="私营有限责任公司">私营有限责任公司</option>
+                            <option value="私营合伙企业">私营合伙企业</option>
+                            <option value="私营独资企业">私营独资企业</option>
+                            <option value="股份有限公司">股份有限公司</option>
+                            <option value="其他有限责任公司">其他有限责任公司</option>
+                            <option value="国有独资公司">国有独资公司</option>
+                            <option value="有限责任公司">有限责任公司</option>
+                            <option value="其他联营企业">其他联营企业</option>
+                            <option value="国有与集体联营企业">国有与集体联营企业</option>
+                            <option value="集体联营企业">集体联营企业</option>
+                            <option value="国有联营企业">国有联营企业</option>
+                            <option value="联营企业">联营企业</option>
+                            <option value="内资企业">内资企业</option>
+                            <option value="私营企业">私营企业</option>
+                            <option value="集体企业">集体企业</option>
+                            <option value="国有企业">国有企业</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="control-group">
+                        <span>&nbsp;&nbsp;&nbsp;安全度:</span>
+                        <select class="form-control" id="safetyLevel" style="width: 314px;">
+                            <option value="">选择安全度</option>
+                            <option value="正常库">正常库</option>
+                            <option value="病库">病库</option>
+                            <option value="险库">险库</option>
+                            <option value="危库">危库</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <span>&nbsp;&nbsp;&nbsp;库等别:</span>
+                        <select class="form-control" id="bankLevel" style="width: 314px;">
+                            <option value="">选择库等别</option>
+                            <option value="一等">一等</option>
+                            <option value="二等">二等</option>
+                            <option value="三等">三等</option>
+                            <option value="四等">四等</option>
+                            <option value="五等">五等</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <span>筑坝方式:</span>
+                        <select class="form-control" id="dammingMethod" style="width: 314px;">
+                            <option value="">选择筑坝方式</option>
+                            <option value="上游式">上游式</option>
+                            <option value="中游式">中游式</option>
+                            <option value="下游式">下游式</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="userlog"></div> -->
+    </div>
+</body>
+</html>

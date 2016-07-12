@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黑龙江省非煤矿山安全许可证系统</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/commend.css">
+    <link rel="stylesheet" type="text/css" href="static/css/laydate.css">
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/commend.js"></script>
+    <script type="text/javascript" src="static/js/searchCommend.js"></script>
+    <!--安全许可证组合查询-->
+</head>
+<body>
+    <div id="nav" class="" style="">
+    </div>
+    <div class="popbox"></div>
+    <div class="center control" style="">
+        <div class="centerindex control-group" id="userlog" style="margin-top: 20px;">
+            <div class="row-fluid">
+                <div class="span4">
+                    <div class="control-group">
+                        <span>企业名称:</span>
+                        <input type="text" class="usercompany" style="width: 300px;"/>
+                    </div>
+                    <!--<div class="control-group">
+                        <span>取证单位名称:</span>
+                        <input type="text" class="getcompany" style="width: 300px;"/>
+                    </div>-->
+                    <div class="control-group" >
+                        <span>取证单位类型:</span>
+                        <select class="form-control" id="getCompanyType" style="width: 314px;">
+                            <option value="">所有单位类型</option>
+                            <option value="地下矿山企业">地下矿山企业</option>
+                            <option value="露天矿山企业">露天矿山企业</option>
+                            <option value="小型露天采石场">小型露天采石场</option>
+                            <option value="石油天然气开采企业">石油天然气开采企业</option>
+                            <option value="尾矿库">尾矿库</option>
+                            <option value="地质勘探企业">地质勘探企业</option>
+                            <option value="矿山生产系统">矿山生产系统</option>
+                            <option value="采掘施工企业">采掘施工企业</option>
+                            <option value="非矿山企业">非矿山企业</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <button class="btn btn-primary" id="safeSecurityTableButton" style="width:100px;">查询</button>
+                        <button class="btn btn-primary" id="safeSecuritygetExcel" style="width:100px;">导出Excel</button>
+                    </div>
+                    
+                </div>
+                <div class="span4">
+                    <div class="control-group" >
+                        <span>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区:</span>
+                        <select class="form-control"  id="heilongjiang"  placeholder="请选择" style="width: 314px;">
+                        	<option value="0" name="0">请选择</option>
+                            <option value="1923010100" name="haerbin">哈尔滨市</option>
+                            <option value="1923020100" name="qiqihaer">齐齐哈尔市</option>
+                            <option value="1923030100" name="jixi">鸡西市</option>
+                            <option value="1923040100" name="hegang">鹤岗市</option>
+                            <option value="1923050100" name="shuangyashan">双鸭山市</option>
+                            <option value="1923060100" name="daqing">大庆市</option>
+                            <option value="1923070100" name="yichun">伊春市</option>
+                            <option value="1923080100" name="jiamusi">佳木斯市</option>
+                            <option value="1923090100" name="qitaihe">七台河市</option>
+                            <option value="1923100100" name="mudanjiang">牡丹江市</option>
+                            <option value="1923110100" name="heihe">黑河市</option>
+                            <option value="1923230100" name="suihua">绥化市</option>
+                            <option value="1923270100" name="daxinganling">大兴安岭地区</option>
+                            <option value="1923280100" name="nongkenzongju">农垦总局</option>
+                            <option value="1923290100" name="shengongzongju">森工总局</option>
+                        </select><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <select class="form-control 0" style="width:314px;">
+                        	<option value=""></option>
+                        </select>
+                        <select class="form-control haerbin" style="width: 314px;">
+                            <option value="1923010100">市辖区</option>
+                            <option value="1923010200">道里区</option>
+                            <option value="1923010300">南岗区</option>
+                            <option value="1923010400">道外区</option>
+                            <option value="1923010600">香坊区</option>
+                            <option value="1923010700">动力区</option>
+                            <option value="1923010800">平房区</option>
+                            <option value="1923010900">松北区</option>
+                            <option value="1923011100">呼兰区</option>
+                            <option value="1923012300">依兰县</option>
+                            <option value="1923012400">方正县</option>
+                            <option value="1923012500">宾县</option>
+                            <option value="1923012600">巴彦县</option>
+                            <option value="1923012700">木兰县</option>
+                            <option value="1923012800">通河县</option>
+                            <option value="1923012900">延寿县</option>
+                            <option value="1923018100">阿城市</option>
+                            <option value="1923018200">双城市</option>
+                            <option value="1923018300">尚志市</option>
+                            <option value="1923018400">五常市</option>
+                        </select>
+                        <select class="form-control qiqihaer" style="width: 314px;">
+                            <option value="1923020100">市辖区</option>
+                            <option value="1923020200">龙沙区</option>
+                            <option value="1923020300">建华区</option>
+                            <option value="1923020400">铁锋区</option>
+                            <option value="1923020500">昂昂溪区</option>
+                            <option value="1923020600">富拉尔基区</option>
+                            <option value="1923020700">碾子山区</option>
+                            <option value="1923020800">梅里斯达斡尔族区</option>
+                            <option value="1923022100">龙江县</option>
+                            <option value="1923022300">依安县</option>
+                            <option value="1923022400">泰来县</option>
+                            <option value="1923022500">甘南县</option>
+                            <option value="1923022700">富裕县</option>
+                            <option value="1923022900">克山县</option>
+                            <option value="1923023000">克东县</option>
+                            <option value="1923023100">拜泉县</option>
+                            <option value="1923028100">讷河市</option>
+                        </select>
+                        <select class="form-control jixi" style="width: 314px;">
+                            <option value="1923030100">市辖区</option>
+                            <option value="1923030200">鸡冠区</option>
+                            <option value="1923030300">恒山区</option>
+                            <option value="1923030400">滴道区</option>
+                            <option value="1923030500">梨树区</option>
+                            <option value="1923030600">城子河区</option>
+                            <option value="1923030700">麻山区</option>
+                            <option value="1923032100">鸡东区</option>
+                            <option value="1923038100">虎林市</option>
+                            <option value="1923038200">密山市</option>
+                        </select>
+                        <select class="form-control hegang" style="width: 314px;">
+                            <option value="1923040100">市辖区</option>
+                            <option value="1923040200">向阳区</option>
+                            <option value="1923040300">工农区</option>
+                            <option value="1923040400">南山区</option>
+                            <option value="1923040500">兴安区</option>
+                            <option value="1923040600">东山区</option>
+                            <option value="1923040700">兴山区</option>
+                            <option value="1923042100">萝山区</option>
+                            <option value="1923042200">绥滨区</option>
+                        </select>
+                        <select class="form-control shuangyashan" style="width: 314px;">
+                            <option value="1923050100">市辖区</option>
+                            <option value="1923050200">尖山区</option>
+                            <option value="1923050300">岭东区</option>
+                            <option value="1923050500">四方台区</option>
+                            <option value="1923050600">宝山区</option>
+                            <option value="1923052100">集贤县</option>
+                            <option value="1923052200">友谊县</option>
+                            <option value="1923052300">宝清县</option>
+                            <option value="1923052400">饶河县</option>
+                        </select>
+                        <select class="form-control daqing" style="width: 314px;">
+                            <option value="1923060100">市辖区</option>
+                            <option value="1923060200">萨尔图市</option>
+                            <option value="1923060300">龙凤区</option>
+                            <option value="1923060400">让胡路区</option>
+                            <option value="1923060500">红岗区</option>
+                            <option value="1923060600">大同区</option>
+                            <option value="1923062100">肇州县</option>
+                            <option value="1923062200">肇源县</option>
+                            <option value="1923062300">林甸县</option>
+                            <option value="1923062400">杜尔伯特蒙古族自治县</option>
+                        </select>
+                        <select class="form-control yichun" style="width: 314px;">
+                            <option value="1923070100">市辖区</option>
+                            <option value="1923070200">伊春区</option>
+                            <option value="1923070300">南岔区</option>
+                            <option value="1923070400">友好区</option>
+                            <option value="1923070500">西林区</option>
+                            <option value="1923070600">翠峦区</option>
+                            <option value="1923070700">新青区</option>
+                            <option value="1923070800">美溪区</option>
+                            <option value="1923070900">金山屯区</option>
+                            <option value="1923071000">五营区</option>
+                            <option value="1923071100">乌马河区</option>
+                            <option value="1923071200">汤旺河区</option>
+                            <option value="1923071300">带岭区</option>
+                            <option value="1923071400">乌伊岭区</option>
+                            <option value="1923071500">红星区</option>
+                            <option value="1923071600">上甘岭区</option>
+                            <option value="1923072200">嘉荫县</option>
+                            <option value="1923078100">铁力区</option>
+                        </select>
+                        <select class="form-control jiamusi" style="width: 314px;">
+                            <option value="1923080100">市辖区</option>
+                            <option value="1923080300">向阳区</option>
+                            <option value="1923080400">前进区</option>
+                            <option value="1923080500">东风区</option>
+                            <option value="1923081100">郊区</option>
+                            <option value="1923082200">桦南区</option>
+                            <option value="1923082600">桦川区</option>
+                            <option value="1923082800">汤原区</option>
+                            <option value="1923083300">抚远县</option>
+                            <option value="1923088100">同江市</option>
+                            <option value="1923088200">富锦市</option>
+                        </select>
+                        <select class="form-control qitaihe" style="width: 314px;">
+                            <option value="1923090100">市辖区</option>
+                            <option value="1923090200">新兴区</option>
+                            <option value="1923090300">桃山区</option>
+                            <option value="1923090400">茄子河区</option>
+                            <option value="1923091000">勃利区</option>
+                        </select>
+                        <select class="form-control mudanjiang" style="width: 314px;">
+                            <option value="1923100100">市辖区</option>
+                            <option value="1923100200">东安区</option>
+                            <option value="1923100300">阳明区</option>
+                            <option value="1923100400">爱民区</option>
+                            <option value="1923100500">西安区</option>
+                            <option value="1923102400">东宁县</option>
+                            <option value="1923102500">林口县</option>
+                            <option value="1923108100">绥芬河市</option>
+                            <option value="1923108300">海林市</option>
+                            <option value="1923108400">宁安市</option>
+                            <option value="1923108500">穆棱市</option>
+                        </select>
+                        <select class="form-control heihe" style="width: 314px;">
+                            <option value="1923110100">市辖区</option>
+                            <option value="1923110200">爱辉区</option>
+                            <option value="1923112100">嫩江县</option>
+                            <option value="1923112300">逊克县</option>
+                            <option value="1923112400">孙吴县</option>
+                            <option value="1923118100">北安市</option>
+                            <option value="1923118200">五大连池市</option>
+                        </select>
+                        <select class="form-control suihua" style="width: 314px;">
+                            <option value="1923120100">市辖区</option>
+                            <option value="1923120200">北林区</option>
+                            <option value="1923122100">望奎县</option>
+                            <option value="1923122200">兰西县</option>
+                            <option value="1923122300">青冈县</option>
+                            <option value="1923122400">庆安县</option>
+                            <option value="1923122500">明水县</option>
+                            <option value="1923122600">绥棱县</option>
+                            <option value="1923128100">安达市</option>
+                            <option value="1923128200">肇东市</option>
+                            <option value="1923128300">海伦市</option>
+                        </select>
+                        <select class="form-control daxinganling" style="width: 314px;">
+                            <option value="1923272100">市辖区</option>
+                            <option value="1923272200">呼玛县</option>
+                            <option value="1923272300">塔河县</option>
+                            <option value="1923272400">漠河县</option>
+                            <option value="1923272500">加格达奇区</option>
+                            <option value="1923272600">呼中区</option>
+                            <option value="1923272700">新林区</option>
+                            <option value="1923272800">松岭区</option>
+                        </select>
+                        <select class="form-control nongkenzongju" style="width: 314px;">
+                            <option value="1923280100">哈尔滨分局</option>
+                            <option value="1923280200">齐齐哈尔分局</option>
+                            <option value="1923280300">牡丹江分局</option>
+                            <option value="1923280400">绥化分局</option>
+                            <option value="1923280500">北安分局</option>
+                            <option value="1923280600">宝泉岭分局</option>
+                            <option value="1923280700">红兴隆分局</option>
+                            <option value="1923280800">建三江分局</option>
+                            <option value="1923280900">九三分局</option>
+                        </select>
+                        <select class="form-control sengongzongju" style="width: 314px;">
+                            <option value="1923290100">双鸭山林业局</option>
+                            <option value="1923290200">鹤立林业局</option>
+                            <option value="1923290300">桦南林业局</option>
+                            <option value="1923290400">鹤北林业局</option>
+                            <option value="1923290500">清河林业局</option>
+                            <option value="1923290600">东方红林业局</option>
+                            <option value="1923290700">迎春林业局</option>
+                            <option value="1923290800">大海林林业局</option>
+                            <option value="1923290900">海林林业局</option>
+                            <option value="1923291000">柴河林业局</option>
+                            <option value="1923291100">东京城林业局</option>
+                            <option value="1923291200">林口林业局</option>
+                            <option value="1923291300">绥阳林业局</option>
+                            <option value="1923291400">八面通林业局</option>
+                            <option value="1923291500">穆棱林业局</option>
+                            <option value="1923291600">山河屯林业局</option>
+                            <option value="1923291700">通北林业局</option>
+                            <option value="1923291800">苇河林业局</option>
+                            <option value="1923291900">亚布力林业局</option>
+                            <option value="1923292000">方正林业局</option>
+                            <option value="1923292100">沾河林业局</option>
+                            <option value="1923292200">绥棱林业局</option>
+                            <option value="1923292300">兴隆林业局</option>
+                            <option value="1923292400">带岭林业局</option>
+                        </select>
+                    </div>
+                    
+                </div>
+                <div class="span4">
+               		<div class="control-group">
+                        <span>经济类型:</span>
+                        <select class="form-control" id="economyType" style="width: 314px;">
+                            <option value="">全部</option>
+                            <option value="其他">其他</option>
+                            <option value="合伙企业">合伙企业</option>
+                            <option value="普通合伙">普通合伙</option>
+                            <option value="个人经营">个人经营</option>
+                            <option value="个人独资">个人独资</option>
+                            <option value="个体工商户（合伙）">个体工商户（合伙）</option>
+                            <option value="个体">个体</option>
+                            <option value="国有控股企业">国有控股企业</option>
+                            <option value="外资企业">外资企业</option>
+                            <option value="股份合作企业">股份合作企业</option>
+                            <option value="个体工商户">个体工商户</option>
+                            <option value="个体工商户（合伙）">个体工商户（合伙）</option>
+                            <option value="外商投资股份有限公司">外商投资股份有限公司</option>
+                            <option value="中外合作经营企业">中外合作经营企业</option>
+                            <option value="中外合资经营企业">中外合资经营企业</option>
+                            <option value="外商投资企业">外商投资企业</option>
+                            <option value="港澳台商投资股份有限公司">港澳台商投资股份有限公司</option>
+                            <option value="港澳台商独资经营企业">港澳台商独资经营企业</option>
+                            <option value="合作经营企业（港或澳台）">合作经营企业（港或澳台）</option>
+                            <option value="合资经营企业（港或澳台）">合资经营企业（港或澳台）</option>
+                            <option value="港澳台商投资企业">港澳台商投资企业</option>
+                            <option value="其他企业">其他企业</option>
+                            <option value="私营股份有限公司">私营股份有限公司</option>
+                            <option value="私营有限责任公司">私营有限责任公司</option>
+                            <option value="私营合伙企业">私营合伙企业</option>
+                            <option value="私营独资企业">私营独资企业</option>
+                            <option value="股份有限公司">股份有限公司</option>
+                            <option value="其他有限责任公司">其他有限责任公司</option>
+                            <option value="国有独资公司">国有独资公司</option>
+                            <option value="有限责任公司">有限责任公司</option>
+                            <option value="其他联营企业">其他联营企业</option>
+                            <option value="国有与集体联营企业">国有与集体联营企业</option>
+                            <option value="集体联营企业">集体联营企业</option>
+                            <option value="国有联营企业">国有联营企业</option>
+                            <option value="联营企业">联营企业</option>
+                            <option value="内资企业">内资企业</option>
+                            <option value="私营企业">私营企业</option>
+                            <option value="集体企业">集体企业</option>
+                            <option value="国有企业">国有企业</option>
+                        </select>
+                    </div>
+                    <!--<div class="control-group">
+                        <span>矿种类型:</span>
+                        <select id="0102000000Choose" class="form-control" style="width:314px;">
+                            <option value="0" name="0">全部</option>
+                            <option value="0102010000" name="0102010000range">能源矿产</option>
+                            <option value="0102020000" name="0102020000range">黑色金属矿产</option>
+                            <option value="0102030000" name="0102030000range">有色金属矿产</option>
+                            <option value="0102040000" name="0102040000range">贵金属矿产</option>
+                            <option value="0102050000" name="0102050000range">稀有稀土及分散元素矿产</option>
+                            <option value="0102060000" name="0102060000range">冶金辅助原料非金属矿产</option>
+                            <option value="0102070000" name="0102070000range">铂族金属矿产</option>
+                            <option value="0102080000" name="0102080000range">化工原料非金属矿产</option>
+                            <option value="0102090000" name="0102090000range">特种非金属矿物</option>
+                            <option value="0102100000" name="0102100000range">建材及其他非金属矿物</option>
+                            <option value="0102110000" name="0102110000range">水气矿产</option>
+                        </select><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <select id="0" class="form-control" style="width:314px;">
+                        	<option value=""></option>
+                        </select>
+                        <select id="0102010000range" class="form-control" style="width:314px;">
+                            <option value="1201002000">油页岩</option>
+                            <option value="1201003000">石油</option>
+                            <option value="1201004000">天然气</option>
+                            <option value="1201005000">煤层气</option>
+                            <option value="1201006000">天然沥青</option>
+                            <option value="1201007000">地热</option>
+                            <option value="1201008000">铀</option>
+                            <option value="1201009000">钍</option>
+                            <option value="1201010000">石煤</option>
+                        </select>
+                        <select id="0102020000range" class="form-control" style="width:314px;">
+                            <option value="1202001000">铁矿</option>
+                            <option value="1202002000">锰矿</option>
+                            <option value="1202003000">铬铁矿</option>
+                            <option value="1202004000">钛矿</option>
+                            <option value="1202005000">钒矿</option>
+                            <option value="1202006000">金红石</option>
+                        </select>
+                        <select id="0102030000range" class="form-control" style="width:314px;">
+                            <option value="1203001000">铜矿</option>
+                            <option value="1203002000">铅矿</option>
+                            <option value="1203003000">锌矿</option>
+                            <option value="1203004000">铝土矿</option>
+                            <option value="1203005000">镁矿</option>
+                            <option value="1203006000">镍矿</option>
+                            <option value="1203007000">钴矿</option>
+                            <option value="1203008000">钨矿</option>
+                            <option value="1203009000">锡矿</option>
+                            <option value="1203010000">铋矿</option>
+                            <option value="1203011000">钼矿</option>
+                            <option value="1203012000">汞矿</option>
+                            <option value="1203013000">锑矿</option>
+                            <option value="1203014000">多金属</option>
+                        </select>
+                        <select id="0102040000range" class="form-control" style="width:314px;">
+                            <option value="1204001000">金矿</option>
+                            <option value="1204002000">砂金</option>
+                            <option value="1204003000">银矿</option>
+                        </select>
+                        <select id="0102050000range" class="form-control" style="width:314px;">
+                            <option value="1205001000">铌钽矿</option>
+                            <option value="1205002000">铌矿</option>
+                            <option value="1205003000">钽矿</option>
+                            <option value="1205004000">铍矿</option>
+                            <option value="1205005000">锂矿</option>
+                            <option value="1205006000">锆矿</option>
+                            <option value="1205007000">锶矿(天青石)</option>
+                            <option value="1205008000">铷矿</option>
+                            <option value="1205009000">铯矿</option>
+                            <option value="1205010000">重稀土矿</option>
+                            <option value="1205011000">钇矿</option>
+                            <option value="1205012000">钆矿</option>
+                            <option value="1205013000">铽矿</option>
+                            <option value="1205014000">镝矿</option>
+                            <option value="1205015000">钬矿</option>
+                            <option value="1205016000">铒矿</option>
+                            <option value="1205017000">铥矿</option>
+                            <option value="1205018000">镱矿</option>
+                            <option value="1205019000">镥矿</option>
+                            <option value="1205020000">轻稀土矿</option>
+                            <option value="1205021000">铈矿</option>
+                            <option value="1205022000">镧矿</option>
+                            <option value="1205023000">镨矿</option>
+                            <option value="1205024000">铷矿</option>
+                            <option value="1205025000">钐矿</option>
+                            <option value="1205026000">铕矿</option>
+                            <option value="1205027000">锗矿</option>
+                            <option value="1205028000">镓矿</option>
+                            <option value="1205029000">铟矿</option>
+                            <option value="1205030000">铊矿</option>
+                            <option value="1205031000">鉿矿</option>
+                            <option value="1205032000">铼矿</option>
+                            <option value="1205033000">镉矿</option>
+                            <option value="1205034000">钪矿</option>
+                            <option value="1205035000">硒矿</option>
+                            <option value="1205036000">碲矿</option>
+                        </select>
+                        <select id="0102060000range" class="form-control" style="width:314px;">
+                            <option value="1206001000">蓝晶石</option>
+                            <option value="1206002000">矽线石</option>
+                            <option value="1206003000">红柱石</option>
+                            <option value="1206004000">菱镁矿</option>
+                            <option value="1206005000">萤石(普通)</option>
+                            <option value="1206006000">熔剂用石灰岩</option>
+                            <option value="1206007000">冶金用白云岩</option>
+                            <option value="1206008000">冶金用石英岩</option>
+                            <option value="1206009000">冶金用砂岩</option>
+                            <option value="1206010000">铸型用砂岩</option>
+                            <option value="1206011000">铸型用砂</option>
+                            <option value="1206012000">冶金用脉石英</option>
+                            <option value="1206013000">耐火粘土</option>
+                            <option value="1206014000">铁矾土</option>
+                            <option value="1206015000">铸型用粘土</option>
+                            <option value="1206016000">熔剂用蛇纹岩</option>
+                            <option value="1206017000">其他粘土</option>
+                            <option value="1206018000">耐火用橄榄岩</option>
+                        </select>
+                        <select id="0102070000range" class="form-control" style="width:314px;">
+                            <option value="1207001000">铂矿</option>
+                            <option value="1207002000">钯矿</option>
+                            <option value="1207003000">铱矿</option>
+                            <option value="1207004000">铑矿</option>
+                            <option value="1207005000">锇矿</option>
+                            <option value="1207006000">钌矿</option>
+                        </select>
+                        <select id="0102080000range" class="form-control" style="width:314px;">
+                            <option value="1208001000">自然硫</option>
+                            <option value="1208002000">硫铁矿</option>
+                            <option value="1208003000">纳硝石</option>
+                            <option value="1208004000">明矾石</option>
+                            <option value="1208005000">芒硝(含钙芒硝)</option>
+                            <option value="1208006000">重晶石</option>
+                            <option value="1208007000">毒重石</option>
+                            <option value="1208008000">天然碱(Na2CO3)</option>
+                            <option value="1208009000">电石用灰岩</option>
+                            <option value="1208010000">制碱用灰岩</option>
+                            <option value="1208011000">化肥用石灰岩</option>
+                            <option value="1208012000">化肥用白云岩</option>
+                            <option value="1208013000">化肥用石英岩</option>
+                            <option value="1208014000">化肥用砂岩</option>
+                            <option value="1208015000">含钾岩石</option>
+                            <option value="1208016000">含钾砂页岩</option>
+                            <option value="1208017000">化肥用橄榄岩</option>
+                            <option value="1208018000">化肥用蛇纹岩</option>
+                            <option value="1208019000">泥炭</option>
+                            <option value="1208020000">钾盐</option>
+                            <option value="1208021000">岩盐</option>
+                            <option value="1208022000">湖盐</option>
+                            <option value="1208023000">镁盐</option>
+                            <option value="1208024000">天然卤水</option>
+                            <option value="1208025000">碘</option>
+                            <option value="1208026000">溴</option>
+                            <option value="1208027000">砷</option>
+                            <option value="1208028000">磷矿</option>
+                            <option value="1208029000">矿盐</option>
+                        </select>
+                        <select id="0102090000range" class="form-control" style="width:314px;">
+                            <option value="1208030000">磁铁磷灰石</option>
+                            <option value="1209001000">金刚石</option>
+                            <option value="1209002000">压电水晶</option>
+                            <option value="1209003000">熔炼水晶</option>
+                            <option value="1209004000">光学水晶</option>
+                            <option value="1209005000">工艺水晶</option>
+                            <option value="1209006000">蓝石棉</option>
+                            <option value="1209007000">云母</option>
+                            <option value="1209008000">电气石</option>
+                            <option value="1209009000">冰洲石</option>
+                            <option value="1209010000">光学萤石</option>
+                            <option value="1209011000">硼石</option>
+                            <option value="1209012000">水晶</option>
+                            <option value="1209013000">方解石</option>
+                        </select>
+                        <select id="0102100000range" class="form-control" style="width:314px;">
+                            <option value="1210001000">石墨</option>
+                            <option value="1210002000">刚玉</option>
+                            <option value="1210003000">硅灰石</option>
+                            <option value="1210004000">滑石</option>
+                            <option value="1210005000">石棉(温石棉)</option>
+                            <option value="1210006000">长石</option>
+                            <option value="1210007000">石榴子石</option>
+                            <option value="1210008000">黄玉</option>
+                            <option value="1210009000">叶蜡石</option>
+                            <option value="1210010000">蛭石</option>
+                            <option value="1210011000">沸石</option>
+                            <option value="1210012000">石膏</option>
+                            <option value="1210013000">宝石</option>
+                            <option value="1210014000">玉石</option>
+                            <option value="1210015000">玛瑙</option>
+                            <option value="1210016000">玻璃用石灰岩</option>
+                            <option value="1210017000">水泥用石灰岩</option>
+                            <option value="1210018000">致灰用石灰岩</option>
+                            <option value="1210019000">泥灰岩</option>
+                            <option value="1210020000">白垩</option>
+                            <option value="1210021000">玻璃用白云岩</option>
+                            <option value="1210022000">玻璃用石英岩</option>
+                            <option value="1210023000">玻璃用砂岩</option>
+                            <option value="1210024000">水泥配料用砂岩</option>
+                            <option value="1210025000">砖瓦用砂岩</option>
+                            <option value="1210026000">陶瓷用砂岩</option>
+                            <option value="1210027000">玻璃用砂</option>
+                            <option value="1210028000">建筑用砂</option>
+                            <option value="1210029000">水泥配料用砂</option>
+                            <option value="1210030000">水泥标准砂</option>
+                            <option value="1210031000">砖瓦用砂</option>
+                            <option value="1210032000">玻璃用脉石英</option>
+                            <option value="1210033000">粉石英</option>
+                            <option value="1210034000">天然油石</option>
+                            <option value="1210035000">硅藻土</option>
+                            <option value="1210036000">陶粒页岩</option>
+                            <option value="1210037000">砖瓦用页岩</option>
+                            <option value="1210038000">水泥配料用页岩</option>
+                            <option value="1210039000">高岭土</option>
+                            <option value="1210040000">陶瓷土</option>
+                            <option value="1210041000">凹凸棒石粘土</option>
+                            <option value="1210042000">海泡石粘土</option>
+                            <option value="1210043000">伊利石粘土</option>
+                            <option value="1210044000">累托石粘土</option>
+                            <option value="1210045000">膨润土</option>
+                            <option value="1210046000">砖瓦用粘土</option>
+                            <option value="1210047000">水泥用粘土</option>
+                            <option value="1210048000">水泥配料用红土</option>
+                            <option value="1210049000">水泥配料用黄土</option>
+                            <option value="1210050000">水泥配料用泥岩</option>
+                            <option value="1210051000">保温材料用粘土</option>
+                            <option value="1210052000">铸石用玄武岩</option>
+                            <option value="1210053000">水泥用辉绿岩</option>
+                            <option value="1210054000">铸石用辉绿岩</option>
+                            <option value="1210055000">水泥混合材料用安山岩</option>
+                            <option value="1210056000">水泥混合材料用闪长玢岩</option>
+                            <option value="1210057000">麦饭石</option>
+                            <option value="1210058000">珍珠岩</option>
+                            <option value="1210059000">黑曜石</option>
+                            <option value="1210060000">松脂岩</option>
+                            <option value="1210061000">浮石</option>
+                            <option value="1210062000">水泥用粗面岩</option>
+                            <option value="1210063000">铸石用粗面岩</option>
+                            <option value="1210064000">玻璃用凝灰岩</option>
+                            <option value="1210065000">水泥用凝灰岩</option>
+                            <option value="1210066000">水泥用大理石</option>
+                            <option value="1210067000">玻璃用大理石</option>
+                            <option value="1210068000">建筑用石料(凝灰岩)</option>
+                            <option value="1210069000">饰面用石料(大理石)</option>
+                            <option value="1210070000">油砂</option>
+                            <option value="1210071000">赭石</option>
+                            <option value="1210072000">颜料矿物</option>
+                            <option value="1210073000">颜料黄土</option>
+                            <option value="1210074000">透辉石</option>
+                            <option value="1210075000">透闪石</option>
+                            <option value="1210076000">石灰岩</option>
+                            <option value="1210077000">建筑石料用灰岩</option>
+                            <option value="1210078000">含钾岩石</option>
+                            <option value="1210079000">白云岩</option>
+                            <option value="1210080000">建筑用白云岩</option>
+                            <option value="1210081000">石英岩</option>
+                            <option value="1210082000">冶金用石英岩</option>
+                            <option value="1210083000">砂岩</option>
+                            <option value="1210084000">天然石英砂</option>
+                            <option value="1210085000">脉石岩</option>
+                            <option value="1210086000">页岩</option>
+                            <option value="1210087000">陶粒用粘土</option>
+                            <option value="1210088000">橄榄岩</option>
+                            <option value="1210089000">建筑用橄榄岩</option>
+                            <option value="1210090000">蛇纹岩</option>
+                            <option value="1210091000">饰面用蛇纹岩</option>
+                            <option value="1210092000">玄武岩</option>
+                            <option value="1210093000">岩棉用玄武岩</option>
+                            <option value="1210094000">辉绿岩</option>
+                            <option value="1210095000">建筑用辉绿岩</option>
+                            <option value="1210096000">饰面用辉绿岩</option>
+                            <option value="1210097000">饰面用灰岩</option>
+                            <option value="1210098000">安山岩</option>
+                            <option value="1210099000">饰面用安山岩</option>
+                            <option value="1210100000">建筑用安山岩</option>
+                            <option value="1210101000">闪长岩</option>
+                            <option value="1210102000">建筑用闪长岩</option>
+                            <option value="1210103000">花岗岩</option>
+                            <option value="1210104000">建筑用花岗岩</option>
+                            <option value="1210105000">饰面用花岗岩</option>
+                            <option value="1210106000">粗面岩</option>
+                            <option value="1210107000">霞石正常岩</option>
+                            <option value="1210108000">凝灰岩</option>
+                            <option value="1210109000">火山灰</option>
+                            <option value="1210110000">水泥用火山灰</option>
+                            <option value="1210111000">火山渣</option>
+                            <option value="1210112000">大理岩</option>
+                            <option value="1210113000">建筑用大理石</option>
+                            <option value="1210114000">板岩</option>
+                            <option value="1210115000">饰面用板岩</option>
+                            <option value="1210116000">水泥配料用板岩</option>
+                            <option value="1210117000">片麻岩</option>
+                            <option value="1210118000">角闪岩</option>
+                            <option value="1210119000">海砂</option>
+                        </select>
+                        <select id="0102110000range" class="form-control" style="width:314px;">
+                            <option value="1211001000">矿泉水</option>
+                            <option value="1211002000">地下水</option>
+                            <option value="1211003000">二氧化碳气</option>
+                            <option value="1211004000">硫化氢气</option>
+                            <option value="1211005000">氦气</option>
+                            <option value="1211006000">氢气</option>
+                            <option value="1211007000">氡气</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <span>开采方式:</span>
+                        <select class="form-control" id="mineMethod" style="width: 314px;">
+                            <option value="">全部</option>
+                            <option value="露天/地下联合开采">露天/地下联合开采</option>
+                            <option value="露天开采">露天开采</option>
+                            <option value="地下开采">地下开采</option>
+                        </select>
+                    </div>-->
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</body>
+</html>

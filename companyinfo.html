@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黑龙江省非煤矿山行政许可管理系统</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/commend.css">
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/commend.js"></script>
+    <script type="text/javascript" src="static/js/companyinfo.js"></script>
+    <style type="text/css">
+        .table td{
+            text-align: right;
+        }
+        .table .info{
+            text-align:left;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav" style="">
+    </div>
+    <div class="center control">
+        <div class="control-group">
+            <a class="btn refuse">拒绝</a>
+            <a class="btn issuing">发证</a>
+            <a href="#" class="btn" onclick="back();">返回</a>
+        </div>
+        <hr/>
+        <div class="control-group " style="width: 960px;margin-left: auto;margin-right: auto;">
+            <h3 class="head text-center"></h3>
+            <table class="table table-bordered transac">
+                <tr>
+                    <td colspan="2" style="background-color: #C4FAFF;">申请编号</td>
+                    <td class="info"></td>
+                    <td  style="background-color: #C4FAFF;">申请日期</td>
+                    <td class="info"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"  style="background-color: #C4FAFF;">受理编号</td>
+                    <td class="info" style="width: 200px;"></td>
+                    <td  style="background-color: #C4FAFF;">受理日期</td>
+                    <td class="info" style="width: 200px;"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"  style="background-color: #C4FAFF;">经办人</td>
+                    <td class="info"></td>
+                    <td style="background-color: #C4FAFF;">联系电话</td>
+                    <td class="info"></td>
+                </tr>
+            </table>
+            <table class="table table-bordered hide getunit">
+                <tr>
+                    <td rowspan='8' style="width: 20px;background-color: #C4FAFF;">申请单位</td>
+                    <td  style="background-color: #C4FAFF;">名称</td>
+                    <td class="info" colspan="3"></td>
+                </tr>
+                <tr>
+                    <td  style="background-color: #C4FAFF;">地址</td>
+                    <td class="info" colspan="3"></td>
+                </tr>
+                <tr>
+                    <td  style="background-color: #C4FAFF;">邮政编码</td>
+                    <td class="info"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td  style="background-color: #C4FAFF;">从业人数</td>
+                    <td class="info"></td>
+                    <td  style="background-color: #C4FAFF;">专职安全员人数</td>
+                    <td class="info"></td>
+                </tr>
+                <tr>
+                    <td  style="background-color: #C4FAFF;">工商注册号</td>
+                    <td class="info"></td>
+                    <td  style="background-color: #C4FAFF;">登记日期</td>
+                    <td class="info"></td>
+                </tr>
+                <tr>
+                    <td  style="background-color: #C4FAFF;">登记机关</td>
+                    <td class="info" colspan="3"></td>
+                </tr>
+                <tr>
+                    <td  style="background-color: #C4FAFF;">法定代表人</td>
+                    <td class="info"></td>
+                    <td  style="background-color: #C4FAFF;">经济类型</td>
+                    <td class="info"></td>
+                </tr>
+                <tr>
+                    <td  style="background-color: #C4FAFF;">安全负责人</td>
+                    <td class="info"></td>
+                    <td  style="background-color: #C4FAFF;">办公电话</td>
+                    <td class="info"></td>
+                </tr>
+            </table>
+            <table class="table table-bordered hide getunit">
+                <tr>
+                    <td rowspan='6' style="width: 20px;background-color: #C4FAFF;">申请单位</td>
+                    <td style="background-color: #C4FAFF;">名称</td>
+                    <td class="info" colspan="3"></td>
+                </tr>
+                <tr>
+                    <td style="background-color: #C4FAFF;">地址</td>
+                    <td class="info" colspan="3"></td>
+                </tr>
+                <tr>
+                    <td style="background-color: #C4FAFF;">邮政编码</td>
+                    <td class="info"></td>
+                    <td style="background-color: #C4FAFF;">经济类型</td>
+                    <td class="info"></td>
+                </tr>
+                <tr>
+                    <td style="background-color: #C4FAFF;">法定代表人</td>
+                    <td class="info"></td>
+                    <td style="background-color: #C4FAFF;">职工人数</td>
+                    <td class="info"></td>
+                </tr>
+                <tr>
+                    <td style="background-color: #C4FAFF;">安全负责人</td>
+                    <td class="info"></td>
+                    <td style="background-color: #C4FAFF;">专职安全员人数</td>
+                    <td class="info"></td>
+                </tr>
+                <tr>
+                    <td style="background-color: #C4FAFF;">办公电话</td>
+                    <td class="info"></td>
+                    <td style="background-color: #C4FAFF;">工商注册号</td>
+                    <td class="info"></td>
+                </tr>
+            </table>
+            <table class="table table-bordered hide askunit">
+                <tr>
+                    <td rowspan="11"  style="width: 20px;background-color: #C4FAFF;">取证单位</td>
+                    <td  style="background-color: #C4FAFF;">名称</td>
+                    <td class="info" colspan="3"></td>
+                </tr>
+                <tr>
+                    <td  style="background-color: #C4FAFF;">地址</td>
+                    <td class="info" colspan="3"></td>
+                </tr>
+                <tr>
+                    <td  style="background-color: #C4FAFF;">邮政编码</td>
+                    <td class="info"></td>
+                    <td  style="background-color: #C4FAFF;">主要负责人</td>
+                    <td class="info"></td>
+                </tr>
+                <tr>
+                    <td  style="background-color: #C4FAFF;">安全负责人</td>
+                    <td class="info"></td>
+                    <td  style="background-color: #C4FAFF;">办公电话</td>
+                    <td class="info"></td>
+                </tr>
+                <tr>
+                    <td  style="background-color: #C4FAFF;" >开采主矿种</td>
+                    <td class="info"></td>
+                    <td  style="background-color: #C4FAFF;">开采方式</td>
+                    <td class="info"></td>
+                </tr>
+                <tr>
+                    <td  style="background-color: #C4FAFF;">设计生产能力</td>
+                    <td class="info"></td>
+                    <td  style="background-color: #C4FAFF;">产能单位</td>
+                    <td class="info"></td>
+                </tr>
+                <tr>
+                    <td  style="background-color: #C4FAFF;">从业人数</td>
+                    <td class="info"></td>
+                    <td  style="background-color: #C4FAFF;">专职安全员人数</td>
+                    <td class="info"></td>
+                </tr>
+                <tr>
+                    <td rowspan="2"  style="background-color: #C4FAFF;">采矿许可证</td>
+                    <td  style="background-color: #C4FAFF;">发证机关</td>
+                    <td class="info" colspan="2"></td>
+                </tr>
+                <tr>
+                    <td  style="background-color: #C4FAFF;">证号</td>
+                    <td class="info" colspan="2"></td>
+                </tr>
+                <tr>
+                    <td  style="background-color: #C4FAFF;">投产日期</td>
+                    <td class="info"></td>
+                    <td  style="background-color: #C4FAFF;">设计服务年限</td>
+                    <td class="info"></td>
+                </tr>
+                <tr>
+                    <td  style="background-color: #C4FAFF;">竣工验收单位</td>
+                    <td class="info"></td>
+                    <td  style="background-color: #C4FAFF;">竣工验收批复文号</td>
+                    <td class="info"></td>
+                </tr>
+            </table>
+            <table class="table table-bordered hide askunit">
+                <tr>
+                    <td rowspan="6" style="width: 20px;background-color: #C4FAFF;">取证单位</td>
+                    <td style="background-color: #C4FAFF;">名称</td>
+                    <td class="info" colspan="3"></td>
+                </tr>
+                <tr>
+                    <td style="background-color: #C4FAFF;">地址</td>
+                    <td class="info" colspan="3"></td>
+                </tr>
+                <tr>
+                    <td style="background-color: #C4FAFF;">邮政编码</td>
+                    <td class="info"></td>
+                    <td style="background-color: #C4FAFF;">经济类型</td>
+                    <td class="info"></td>
+                </tr>
+                <tr>
+                    <td style="background-color: #C4FAFF;">主要负责人</td>
+                    <td class="info"></td>
+                    <td style="background-color: #C4FAFF;">职工人数</td>
+                    <td class="info"></td>
+                </tr>
+                <tr>
+                    <td style="background-color: #C4FAFF;">安全负责人</td>
+                    <td class="info"></td>
+                    <td style="background-color: #C4FAFF;">专职安全人员数</td>
+                    <td class="info"></td>
+                </tr>
+                <tr>
+                    <td style="background-color: #C4FAFF;">办公电话</td>
+                    <td class="info"></td>
+                    <td style="background-color: #C4FAFF;">工商注册号</td>
+                    <td class="info"></td>
+                </tr>
+            </table>
+            <table  class="table table-bordered rang">
+                <tr>
+                    <td style="background-color: #C4FAFF; width: 150px;">申请许可证范围</td>
+                    <td class="info" colspan="3" style="text-align: left;"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="popbox">
+        <div id="refissue" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:none;width: 470px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="myModalLabel">拒发原因</h4>
+            </div>
+            <div class="modal-body control">
+                <div class="control-group">
+                    <p>请描述拒发证的原因</p>
+                    <textarea id="refissueReason" style="min-width: 400px;"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal">关闭</button>
+                <button class="btn btn-primary refsave" data-dismiss="modal" onclick="refissue();">确定</button>
+            </div>
+        </div>
+        <div id="issue" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display:none;width:600px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 id="myModalLabel">许可证下发</h4>
+            </div>
+            <div class="modal-body control">
+                <div class="control-group">
+                    <a href="" class="btn save" onclick="return false;">保存</a>
+                    <a href="" class="btn disabled original" onclick="return false">正本打印</a>
+                    <a href="" class="btn disabled copy" onclick="return false;">副本打印</a>
+                </div>
+                <div class="control-group">
+                    <span>许可证编号:</span>
+                    <div class="setlicense" style="display: inline;">
+                        <span>地区简称:</span>
+                        <input type="text" style="width: 30px;" value="黑" readonly>
+                        <span>年度:</span>
+                        <input type="text" style="width: 50px;" class="year" readonly>
+                        <span>关键字:</span>
+                        <select style="width: 150px;" class="key">
+                        	<option value="HRB">哈尔滨市</option>
+							<option value="QQHR">齐齐哈尔市</option>
+							<option value="JX">鸡西市</option>
+							<option value="HG">鹤岗市</option>
+							<option value="SYS">双鸭山市</option>
+							<option value="DQ">大庆市</option>
+							<option value="YC">伊春市</option>
+							<option value="JMS">佳木斯市</option>
+							<option value="QTH">七台河市</option>
+							<option value="MDJ">牡丹江市</option>
+							<option value="HH">黑河市</option>
+							<option value="SH">绥化市</option>
+							<option value="DXAL">大兴安岭地区</option>
+							<option value="NKZJ">农垦总局</option>
+							<option value="SGZJ">森工总局</option>
+                        </select>
+                    </div>
+                    <div class="license" style="display: inline;">
+                        <input type="text" class="icrm info" readonly>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <span>单位名称:</span>
+                    <input type="text" class="companyname info" style="width: 400px;" readonly>
+                </div>
+                <div class="control-group">
+                    <span>单位地址:</span>
+                    <input type="text" class="companyaddr info" style="width: 400px;" readonly>
+                </div>
+                <div class="control-group">
+                    <span>许可范围:</span>
+                    <input type="text" class="icrmrang info" style="width: 400px;" readonly>
+                </div>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <span>经济类型:</span>
+                        <input type="text" class="economictype info" readonly style="width: 150px;">
+                    </div>
+                    <div class="span6">
+                        <span>负责人:</span>
+                        <input type="text" class="safety info" readonly style="width: 150px;">
+                    </div>
+                </div>
+                <hr>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <span>有效期开始:</span>
+                        <input type="text" class="validityst info" style="width: 150px;" readonly>
+                    </div>
+                    <div class="span6 valid">
+                        <span>有效期结束:</span>
+                        <input type="text" style="width: 170px;" class="validityend info" id="validityend">
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <span>发证日期:</span>
+                        <input type="text" class="issuingtime info" style="width: 150px;margin-left: 14px;" readonly>
+                    </div>
+                    <div class="span6">
+                        <span>发证机关:</span>
+                        <input type="text" class="issuingauth" style="width: 170px;margin-left: 15px;" readonly value="黑龙江省安全监督管理局">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" style="">
+        <span class="user">操作员:</span>
+    </div>
+</body>
+</html>

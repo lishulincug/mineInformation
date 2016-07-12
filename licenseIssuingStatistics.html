@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黑龙江省非煤矿山行政许可管理系统</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/commend.css">
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/commend.js"></script>
+    <script type="text/javascript" src="static/js/licenseCompany.js"></script>
+</head>
+<style>
+    td{
+        height: 35px;
+        text-align: center;
+        border:1px solid #ddd;
+    }
+    th{
+    border:1px solid #ddd;
+    }
+</style>
+<body>
+    <div id="nav" class="" style="">
+    </div>
+    <div class="popbox"></div>
+    <button type="button" class="btn statistics" id="Stati" data-toggle="modal" style="margin-top:60px;width:100px;margin-left:20px;margin-bottom:-20px;">统计</button>
+    <button type="button" class="btn statistics" id="excel" data-toggle="modal" style="margin-top:60px;width:100px;margin-bottom:-20px;">导出Excel</button>
+    <div class="center control" style="margin-top:0px;">
+        <div class="centerindex control-group" id="userlog" style="margin-top: 50px;">
+            <table>
+                <tr>
+                    <th rowspan="3" style="width:8%">地区</th>
+                    <th colspan="7" style="width:50%">许可证颁发</th>
+                    <th colspan="4" style="width:25%">许可证监督管理</th>
+                    <th colspan="3" rowspan="2" style="width:17%">正常证数</th>
+                </tr>
+                <tr>
+                    <th colspan="2" style="width:20px;">受理数</th>
+                    <th rowspan="2" style="width:20px;">待发数</th>
+                    <th rowspan="2" style="width:20px;">拒发数</th>
+                    <th rowspan="2" style="width:20px;">历史颁发数</th>
+                    <th rowspan="2" style="width:20px;">当年颁发数</th>
+                    <th rowspan="2" style="width:20px;">变更延期数</th>
+                    <th rowspan="2" style="width:20px;">撤销数</th>
+                    <th rowspan="2" style="width:20px;">吊销数</th>
+                    <th rowspan="2" style="width:20px;">注销数</th>
+                    <th rowspan="2" style="width:20px;">暂扣数</th>
+                </tr>
+                <tr>
+                    <th style="width:20px;">受理总数</th>
+                    <th style="width:20px;">其中当年受理数</th>
+                    <th style="width:20px;">小计</th>
+                    <th style="width:20px;">有效期内</th>
+                    <th style="width:20px;">已到期</th>
+                </tr>
+                <tr class="empty">
+                    <th style="width:20px;">哈尔滨市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>齐齐哈尔市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>鸡西市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>鹤岗市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>双鸭山市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>大庆市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>伊春市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>佳木斯市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>七台河市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>牡丹江市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>黑河市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>绥化市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>大兴安岭地区</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>农垦总局</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>森工总局</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>绥芬河</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>抚远</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>总计</th>
+                    <td class="sum1"></td>
+                    <td class="sum2"></td>
+                    <td class="sum3"></td>
+                    <td class="sum4"></td>
+                    <td class="sum5"></td>
+                    <td class="sum6"></td>
+                    <td class="sum7"></td>
+                    <td class="sum8"></td>
+                    <td class="sum9"></td>
+                    <td class="sum10"></td>
+                    <td class="sum11"></td>
+                    <td class="sum12"></td>
+                    <td class="sum13"></td>
+                    <td class="sum14"></td>
+                </tr>
+                <tr>
+                    <td colspan="16"  class="text-error"><strong>说明： 受理数 = 待发数 + 拒发数 + 历史颁发数；   正常证数 = 历史颁发数 - 变更延期数 - 撤销数 - 吊销数 - 注销数 - 暂扣数   (变更同时并延期的，受理数和发证数均按两次计算)</strong></td>
+                </tr>
+            </table>
+        </div>
+        <!-- <div id="userlog"></div> -->
+    </div>
+    <div class="popbox">
+    </div>
+    <div id="footer" class="">
+        <span class="user">操作员:</span>
+    </div>
+</body>
+</html>

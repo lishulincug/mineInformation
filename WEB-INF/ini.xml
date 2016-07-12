@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>   
+<database>   
+    <tag>cchsdb_oracle</tag>
+    <classname>oracle.jdbc.driver.OracleDriver</classname>
+	<url>jdbc:oracle:thin:@127.0.0.1:1521:meikuang</url> 
+    <username>meikuang</username>  
+    <password>meikuang</password>  
+</database>   

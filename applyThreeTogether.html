@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>黑龙江省非煤矿山行政许可管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="static/css/commend.css">
+    <!-- <link rel="stylesheet" href="static/css/apply.css"> -->
+    <script src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/commend.js"></script>
+    <script type="text/javascript" src="static/js/applyThreeTogether.js"></script>
+</head>
+<body>
+	<div id="nav" style="">
+    </div>
+	<div class="popbox"></div>
+	<div class="container applyTable">
+		<div class="tableHead">三同时企业申请书</div>
+		<table class="table table-bordered">
+			<tr>
+				<td class="tdTitle">批复时间</td>
+				<td><input type="text" class="replyTime" id="replyTime"></td>
+				<td class="tdTitle">批复文号</td>
+				<td><input type="text" class="form-control" id="replyNumber"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">受理人</td>
+				<td><input type="text" class="form-control" id="specialManager"></td>
+				<td class="tdTitle">业务办理人</td>
+				<td><input type="text" class="form-control" id="bussinessManager"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">综合审批</td>
+				<td><input type="text" class="form-control" id="approval"></td>
+				<td class="tdTitle">专家</td>
+				<td><input type="text" class="form-control" id="professor"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">处室负责人</td>
+				<td><input type="text" class="form-control" id="officeHeader"></td>
+				<td class="tdTitle">主管领导</td>
+				<td><input type="text" class="form-control" id="leader"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">建设类型</td>
+				<td><select type="text" class="form-control" id="buildType">
+					<option value="新">新</option>
+					<option value="扩">扩</option>
+					<option value="改">改</option>
+				</select></td>
+				<td class="tdTitle">立项审批单位</td>
+				<td><input type="text" class="form-control" id="approvalCompany"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">立项审批日期</td>
+				<td><input type="text" class="approvalDate" id="approvalDate"></td>
+				<td class="tdTitle">设计编制单位</td>
+				<td><input type="text" class="form-control" id="designCompany"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">设置单位资质</td>
+				<td><input type="text" class="form-control" id="cmopanyIntelligence"></td>
+				<td class="tdTitle">变更详情</td>
+				<td><input type="text" class="form-control" id="changeInfo"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">竣工审批时间</td>
+				<td><input type="text" class="completedTime" id="completedTime"></td>
+				<td class="tdTitle">竣工状态</td>
+				<td><input type="text" class="form-control" id="completedState"></td>
+			</tr>
+			<!--<tr>
+				<td class="tdTitle">变更次数</td>
+				<td id="changeNum"></td>
+				<td></td>
+				<td></td>
+			</tr>-->
+		</table>
+		<div class="row">
+			<button type="button" class="btn btn-info applyInfButton span3" data-toggle="modal">申请单位信息维护</button>
+		</div>
+		<table class="table table-bordered">
+			<th rowspan="9">申请单位</th>
+			<tr>
+				<td class="tdTitle">名称</td>
+				<td class="empty" colspan="3" id="applyCompanyName"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">地址</td>
+				<td class="empty" colspan="3"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">邮政编码</td>
+				<td class="empty"></td>
+				<td class="tdTitle">经济类型</td>
+				<td class="empty"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">法定代表人</td>
+				<td class="empty"></td>
+				<td class="tdTitle">职工人数</td>
+				<td class="empty"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">安全负责人</td>
+				<td class="empty"></td>
+				<td class="tdTitle">专职安全员人数</td>
+				<td class="empty"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">办公电话</td>
+				<td class="empty"></td>
+				<td class="tdTitle">工商注册号</td>
+				<td class="empty"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">采矿许可证有效期</td>
+				<td class="avaEnd"></td>
+				<td class="tdTitle">登记机关</td>
+				<td class="registerOffice"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">请选择地区</td>
+				<td class="unitaddress" colspan=3>
+				  <select class="form-control"  id="heilongjiang"  placeholder="请选择" style="width: 314px;">
+                	<option value="0" name="0">请选择</option>
+                    <option value="1923010100" name="haerbin">哈尔滨市</option>
+                    <option value="1923020100" name="qiqihaer">齐齐哈尔市</option>
+                    <option value="1923030100" name="jixi">鸡西市</option>
+                    <option value="1923040100" name="hegang">鹤岗市</option>
+                    <option value="1923050100" name="shuangyashan">双鸭山市</option>
+                    <option value="1923060100" name="daqing">大庆市</option>
+                    <option value="1923070100" name="yichun">伊春市</option>
+                    <option value="1923080100" name="jiamusi">佳木斯市</option>
+                    <option value="1923090100" name="qitaihe">七台河市</option>
+                    <option value="1923100100" name="mudanjiang">牡丹江市</option>
+                    <option value="1923110100" name="heihe">黑河市</option>
+                    <option value="1923230100" name="suihua">绥化市</option>
+                    <option value="1923270100" name="daxinganling">大兴安岭地区</option>
+                    <option value="1923280100" name="nongkenzongju">农垦总局</option>
+                    <option value="1923290100" name="shengongzongju">森工总局</option>
+                  </select>
+                </td>
+			</tr>
+		</table>
+		<div class="row">
+			<button type="button" class="btn btn-info applysubmit span3" data-toggle="modal">提交</button>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黑龙江省非煤矿山行政许可管理系统</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/commend.css">
+    <link rel="stylesheet" type="text/css" href="static/css/ThreeTogether.css">
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/commend.js"></script>
+    <script type="text/javascript" src="static/js/threeTogether.js"></script>
+</head>
+<body>
+	<div class="top" style="width:100%">
+		<span style="float:right;line-height:25px;" class="welcome">欢迎你，</span>
+		<span class="userName" style="float:right;margin-right:30px;line-height:25px;"></span>
+		<p style="width:100%;height:25px;background:#EFF0EF;border-bottom:1px solid #ddd;line-height:25px;"></p>
+	</div>
+    <div class="header">
+    </div>
+    <ul class="header_nav">
+        <li class="text-center"><a href="index.html"><i class="icon-home"></i>&nbsp;&nbsp;首页</a></li>
+        <li class="text-center"><a href="mineInfo.html"><i class="icon-th-large"></i>&nbsp;&nbsp;矿山基本信息</a></li>
+        <li class="text-center"><a href="licenseManage.html"><i class="icon-inbox"></i>&nbsp;&nbsp;许可证管理</a></li>
+        <li class="text-center"><a href="threeTogether.html" class="tabActive"><i class="icon-list-alt"></i>&nbsp;&nbsp;三同时管理</a></li>
+        <li class="text-center"><a href="accidentRegister.html"><i class="icon-warning-sign"></i>&nbsp;&nbsp;事故统计</a></li>
+        <li class="text-center"><a href="lawManage.html"><i class="icon-book"></i>&nbsp;&nbsp;政策法规</a></li>
+    </ul>
+    <div class="tabContent">
+        <div class="tabbable tabs-left tab_change">
+            <ul class="nav nav-tabs tab_change_list">
+                <li class="active"><a href="#tab0" data-toggle="tab" class="heilongjiang">黑龙江省</a></li>
+                <li><a href="#tab1" data-toggle="tab" class="haerbin">哈尔滨市</a></li>
+                <li><a href="#tab2" data-toggle="tab" class="qiqihaer">齐齐哈尔</a></li>
+                <li><a href="#tab3" data-toggle="tab" class="mudanjiang">牡丹江</a></li>
+                <li><a href="#tab4" data-toggle="tab" class="jiamusi">佳木斯</a></li>
+                <li><a href="#tab5" data-toggle="tab" class="daqing">大庆</a></li>
+                <li><a href="#tab6" data-toggle="tab" class="jixi">鸡西</a></li>
+                <li><a href="#tab7" data-toggle="tab" class="shuangyashan">双鸭山</a></li>
+                <li><a href="#tab8" data-toggle="tab" class="yichun">伊春</a></li>
+                <li><a href="#tab9" data-toggle="tab" class="qitaihe">七台河</a></li>
+                <li><a href="#tab10" data-toggle="tab" class="hegang">鹤岗</a></li>
+                <li><a href="#tab11" data-toggle="tab" class="heihe">黑河</a></li>
+                <li><a href="#tab12" data-toggle="tab" class="suihua">绥化</a></li>
+                <li><a href="#tab13" data-toggle="tab" class="daxinganling">大兴安岭</a></li>
+                <li><a href="#tab14" data-toggle="tab" class="nongkenzongju">农垦总局</a></li>
+                <li><a href="#tab15" data-toggle="tab" class="sengongzongju">森工总局</a></li>
+                <li><a href="#tab16" data-toggle="tab" class="suifenhe">绥芬河</a></li>
+                <li><a href="#tab17" data-toggle="tab" class="fuyuan">抚远</a></li>
+            </ul>
+            <div class="tab-content tab_content">
+                <div class="tab-pane fade active in" id="tab0">
+                    <table class="table">
+                        <th colspan="3">黑龙江省已履行建设项目“三同时”企业情况统计表</th>
+                        <tr>
+                            <td>项目</td>
+                            <td>批准建设数量</td>
+                            <td>竣工验收通过数量</td>
+                        </tr>
+                        <tr>
+                            <td>地下矿山</td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                        </tr>
+                        <tr>
+                            <td>露天矿山</td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                        </tr>
+                        <tr>
+                            <td>采石场</td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                        </tr>
+                        <tr>
+                            <td>尾矿库</td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                        </tr>
+                        <tr>
+                            <td>石油天然气企业</td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="tab1">
+                    <table class="table">
+                        <th colspan="3">
+                        哈尔滨市已履行建设项目“三同时”企业情况统计表</th>
+                        <tr>
+                            <td>项目</td>
+                            <td>批准建设数量</td>
+                            <td>竣工验收通过数量</td>
+                        </tr>
+                        <tr>
+                            <td>地下矿山</td>
+                            <td class="hrbempty"></td>
+                            <td class="hrbempty"></td>
+                        </tr>
+                        <tr>
+                            <td>露天矿山</td>
+                            <td class="hrbempty"></td>
+                            <td class="hrbempty"></td>
+                        </tr>
+                        <tr>
+                            <td>采石场</td>
+                            <td class="hrbempty"></td>
+                            <td class="hrbempty"></td>
+                        </tr>
+                        <tr>
+                            <td>尾矿库</td>
+                            <td class="hrbempty"></td>
+                            <td class="hrbempty"></td>
+                        </tr>
+                        <tr>
+                            <td>石油天然气企业</td>
+                            <td class="hrbempty"></td>
+                            <td class="hrbempty"></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td class="hrbempty"></td>
+                            <td class="hrbempty"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="tab2">
+                    <table class="table">
+                        <th colspan="3">齐齐哈尔市已履行建设项目“三同时”企业情况统计表</th>
+                        <tr>
+                            <td>项目</td>
+                            <td>批准建设数量</td>
+                            <td>竣工验收通过数量</td>
+                        </tr>
+                        <tr>
+                            <td>地下矿山</td>
+                            <td class="qqempty"></td>
+                            <td class="qqempty"></td>
+                        </tr>
+                        <tr>
+                            <td>露天矿山</td>
+                            <td class="qqempty"></td>
+                            <td class="qqempty"></td>
+                        </tr>
+                        <tr>
+                            <td>采石场</td>
+                            <td class="qqempty"></td>
+                            <td class="qqempty"></td>
+                        </tr>
+                        <tr>
+                            <td>尾矿库</td>
+                            <td class="qqempty"></td>
+                            <td class="qqempty"></td>
+                        </tr>
+                        <tr>
+                            <td>石油天然气企业</td>
+                            <td class="qqempty"></td>
+                            <td class="qqempty"></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td class="qqempty"></td>
+                            <td class="qqempty"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="tab3">
+                    <table class="table">
+                        <th colspan="3">牡丹江市已履行建设项目“三同时”企业情况统计表</th>
+                        <tr>
+                            <td>项目</td>
+                            <td>批准建设数量</td>
+                            <td>竣工验收通过数量</td>
+                        </tr>
+                        <tr>
+                            <td>地下矿山</td>
+                            <td class="mdjempty"></td>
+                            <td class="mdjempty"></td>
+                        </tr>
+                        <tr>
+                            <td>露天矿山</td>
+                            <td class="mdjempty"></td>
+                            <td class="mdjempty"></td>
+                        </tr>
+                        <tr>
+                            <td>采石场</td>
+                            <td class="mdjempty"></td>
+                            <td class="mdjempty"></td>
+                        </tr>
+                        <tr>
+                            <td>尾矿库</td>
+                            <td class="mdjempty"></td>
+                            <td class="mdjempty"></td>
+                        </tr>
+                        <tr>
+                            <td>石油天然气企业</td>
+                            <td class="mdjempty"></td>
+                            <td class="mdjempty"></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td class="mdjempty"></td>
+                            <td class="mdjempty"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="tab4">
+                    <table class="table">
+                        <th colspan="3">佳木斯市已履行建设项目“三同时”企业情况统计表</th>
+                        <tr>
+                            <td>项目</td>
+                            <td>批准建设数量</td>
+                            <td>竣工验收通过数量</td>
+                        </tr>
+                        <tr>
+                            <td>地下矿山</td>
+                            <td class="jmsempty"></td>
+                            <td class="jmsempty"></td>
+                        </tr>
+                        <tr>
+                            <td>露天矿山</td>
+                            <td class="jmsempty"></td>
+                            <td class="jmsempty"></td>
+                        </tr>
+                        <tr>
+                            <td>采石场</td>
+                            <td class="jmsempty"></td>
+                            <td class="jmsempty"></td>
+                        </tr>
+                        <tr>
+                            <td>尾矿库</td>
+                            <td class="jmsempty"></td>
+                            <td class="jmsempty"></td>
+                        </tr>
+                        <tr>
+                            <td>石油天然气企业</td>
+                            <td class="jmsempty"></td>
+                            <td class="jmsempty"></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td class="jmsempty"></td>
+                            <td class="jmsempty"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="tab5">
+                    <table class="table">
+                        <th colspan="3">大庆市已履行建设项目“三同时”企业情况统计表</th>
+                        <tr>
+                            <td>项目</td>
+                            <td>批准建设数量</td>
+                            <td>竣工验收通过数量</td>
+                        </tr>
+                        <tr>
+                            <td>地下矿山</td>
+                            <td class="dqempty"></td>
+                            <td class="dqempty"></td>
+                        </tr>
+                        <tr>
+                            <td>露天矿山</td>
+                            <td class="dqempty"></td>
+                            <td class="dqempty"></td>
+                        </tr>
+                        <tr>
+                            <td>采石场</td>
+                            <td class="dqempty"></td>
+                            <td class="dqempty"></td>
+                        </tr>
+                        <tr>
+                            <td>尾矿库</td>
+                            <td class="dqempty"></td>
+                            <td class="dqempty"></td>
+                        </tr>
+                        <tr>
+                            <td>石油天然气企业</td>
+                            <td class="dqempty"></td>
+                            <td class="dqempty"></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td class="dqempty"></td>
+                            <td class="dqempty"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="tab6">
+                    <table class="table">
+                        <th colspan="3">鸡西市已履行建设项目“三同时”企业情况统计表</th>
+                        <tr>
+                            <td>项目</td>
+                            <td>批准建设数量</td>
+                            <td>竣工验收通过数量</td>
+                        </tr>
+                        <tr>
+                            <td>地下矿山</td>
+                            <td class="jxempty"></td>
+                            <td class="jxempty"></td>
+                        </tr>
+                        <tr>
+                            <td>露天矿山</td>
+                            <td class="jxempty"></td>
+                            <td class="jxempty"></td>
+                        </tr>
+                        <tr>
+                            <td>采石场</td>
+                            <td class="jxempty"></td>
+                            <td class="jxempty"></td>
+                        </tr>
+                        <tr>
+                            <td>尾矿库</td>
+                            <td class="jxempty"></td>
+                            <td class="jxempty"></td>
+                        </tr>
+                        <tr>
+                            <td>石油天然气企业</td>
+                            <td class="jxempty"></td>
+                            <td class="jxempty"></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td class="jxempty"></td>
+                            <td class="jxempty"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="tab7">
+                    <table class="table">
+                        <th colspan="3">双鸭山市已履行建设项目“三同时”企业情况统计表</th>
+                        <tr>
+                            <td>项目</td>
+                            <td>批准建设数量</td>
+                            <td>竣工验收通过数量</td>
+                        </tr>
+                        <tr>
+                            <td>地下矿山</td>
+                            <td class="sysempty"></td>
+                            <td class="sysempty"></td>
+                        </tr>
+                        <tr>
+                            <td>露天矿山</td>
+                            <td class="sysempty"></td>
+                            <td class="sysempty"></td>
+                        </tr>
+                        <tr>
+                            <td>采石场</td>
+                            <td class="sysempty"></td>
+                            <td class="sysempty"></td>
+                        </tr>
+                        <tr>
+                            <td>尾矿库</td>
+                            <td class="sysempty"></td>
+                            <td class="sysempty"></td>
+                        </tr>
+                        <tr>
+                            <td>石油天然气企业</td>
+                            <td class="sysempty"></td>
+                            <td class="sysempty"></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td class="sysempty"></td>
+                            <td class="sysempty"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="tab8">
+                    <table class="table">
+                        <th colspan="3">伊春市已履行建设项目“三同时”企业情况统计表</th>
+                        <tr>
+                            <td>项目</td>
+                            <td>批准建设数量</td>
+                            <td>竣工验收通过数量</td>
+                        </tr>
+                        <tr>
+                            <td>地下矿山</td>
+                            <td class="ycempty"></td>
+                            <td class="ycempty"></td>
+                        </tr>
+                        <tr>
+                            <td>露天矿山</td>
+                            <td class="ycempty"></td>
+                            <td class="ycempty"></td>
+                        </tr>
+                        <tr>
+                            <td>采石场</td>
+                            <td class="ycempty"></td>
+                            <td class="ycempty"></td>
+                        </tr>
+                        <tr>
+                            <td>尾矿库</td>
+                            <td class="ycempty"></td>
+                            <td class="ycempty"></td>
+                        </tr>
+                        <tr>
+                            <td>石油天然气企业</td>
+                            <td class="ycempty"></td>
+                            <td class="ycempty"></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td class="ycempty"></td>
+                            <td class="ycempty"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="tab9">
+                    <table class="table">
+                        <th colspan="3">七台河市已履行建设项目“三同时”企业情况统计表</th>
+                        <tr>
+                            <td>项目</td>
+                            <td>批准建设数量</td>
+                            <td>竣工验收通过数量</td>
+                        </tr>
+                        <tr>
+                            <td>地下矿山</td>
+                            <td class="qthempty"></td>
+                            <td class="qthempty"></td>
+                        </tr>
+                        <tr>
+                            <td>露天矿山</td>
+                            <td class="qthempty"></td>
+                            <td class="qthempty"></td>
+                        </tr>
+                        <tr>
+                            <td>采石场</td>
+                            <td class="qthempty"></td>
+                            <td class="qthempty"></td>
+                        </tr>
+                        <tr>
+                            <td>尾矿库</td>
+                            <td class="qthempty"></td>
+                            <td class="qthempty"></td>
+                        </tr>
+                        <tr>
+                            <td>石油天然气企业</td>
+                            <td class="qthempty"></td>
+                            <td class="qthempty"></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td class="qthempty"></td>
+                            <td class="qthempty"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="tab10">
+                    <table class="table">
+                        <th colspan="3">鹤岗市已履行建设项目“三同时”企业情况统计表</th>
+                        <tr>
+                            <td>项目</td>
+                            <td>批准建设数量</td>
+                            <td>竣工验收通过数量</td>
+                        </tr>
+                        <tr>
+                            <td>地下矿山</td>
+                            <td class="hgempty"></td>
+                            <td class="hgempty"></td>
+                        </tr>
+                        <tr>
+                            <td>露天矿山</td>
+                            <td class="hgempty"></td>
+                            <td class="hgempty"></td>
+                        </tr>
+                        <tr>
+                            <td>采石场</td>
+                            <td class="hgempty"></td>
+                            <td class="hgempty"></td>
+                        </tr>
+                        <tr>
+                            <td>尾矿库</td>
+                            <td class="hgempty"></td>
+                            <td class="hgempty"></td>
+                        </tr>
+                        <tr>
+                            <td>石油天然气企业</td>
+                            <td class="hgempty"></td>
+                            <td class="hgempty"></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td class="hgempty"></td>
+                            <td class="hgempty"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="tab11">
+                    <table class="table">
+                        <th colspan="3">黑河市已履行建设项目“三同时”企业情况统计表</th>
+                        <tr>
+                            <td>项目</td>
+                            <td>批准建设数量</td>
+                            <td>竣工验收通过数量</td>
+                        </tr>
+                        <tr>
+                            <td>地下矿山</td>
+                            <td class="hhempty"></td>
+                            <td class="hhempty"></td>
+                        </tr>
+                        <tr>
+                            <td>露天矿山</td>
+                            <td class="hhempty"></td>
+                            <td class="hhempty"></td>
+                        </tr>
+                        <tr>
+                            <td>采石场</td>
+                            <td class="hhempty"></td>
+                            <td class="hhempty"></td>
+                        </tr>
+                        <tr>
+                            <td>尾矿库</td>
+                            <td class="hhempty"></td>
+                            <td class="hhempty"></td>
+                        </tr>
+                        <tr>
+                            <td>石油天然气企业</td>
+                            <td class="hhempty"></td>
+                            <td class="hhempty"></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td class="hhempty"></td>
+                            <td class="hhempty"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="tab12">
+                    <table class="table">
+                        <th colspan="3">绥化市已履行建设项目“三同时”企业情况统计表</th>
+                        <tr>
+                            <td>项目</td>
+                            <td>批准建设数量</td>
+                            <td>竣工验收通过数量</td>
+                        </tr>
+                        <tr>
+                            <td>地下矿山</td>
+                            <td class="shempty"></td>
+                            <td class="shempty"></td>
+                        </tr>
+                        <tr>
+                            <td>露天矿山</td>
+                            <td class="shempty"></td>
+                            <td class="shempty"></td>
+                        </tr>
+                        <tr>
+                            <td>采石场</td>
+                            <td class="shempty"></td>
+                            <td class="shempty"></td>
+                        </tr>
+                        <tr>
+                            <td>尾矿库</td>
+                            <td class="shempty"></td>
+                            <td class="shempty"></td>
+                        </tr>
+                        <tr>
+                            <td>石油天然气企业</td>
+                            <td class="shempty"></td>
+                            <td class="shempty"></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td class="shempty"></td>
+                            <td class="shempty"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="tab13">
+                    <table class="table">
+                        <th colspan="3">大兴安岭地区已履行建设项目“三同时”企业情况统计表</th>
+                        <tr>
+                            <td>项目</td>
+                            <td>批准建设数量</td>
+                            <td>竣工验收通过数量</td>
+                        </tr>
+                        <tr>
+                            <td>地下矿山</td>
+                            <td class="dxanempty"></td>
+                            <td class="dxanempty"></td>
+                        </tr>
+                        <tr>
+                            <td>露天矿山</td>
+                            <td class="dxanempty"></td>
+                            <td class="dxanempty"></td>
+                        </tr>
+                        <tr>
+                            <td>采石场</td>
+                            <td class="dxanempty"></td>
+                            <td class="dxanempty"></td>
+                        </tr>
+                        <tr>
+                            <td>尾矿库</td>
+                            <td class="dxanempty"></td>
+                            <td class="dxanempty"></td>
+                        </tr>
+                        <tr>
+                            <td>石油天然气企业</td>
+                            <td class="dxanempty"></td>
+                            <td class="dxanempty"></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td class="dxanempty"></td>
+                            <td class="dxanempty"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="tab14">
+                    <table class="table">
+                        <th colspan="3">农垦总局已履行建设项目“三同时”企业情况统计表</th>
+                        <tr>
+                            <td>项目</td>
+                            <td>批准建设数量</td>
+                            <td>竣工验收通过数量</td>
+                        </tr>
+                        <tr>
+                            <td>地下矿山</td>
+                            <td class="nkempty"></td>
+                            <td class="nkempty"></td>
+                        </tr>
+                        <tr>
+                            <td>露天矿山</td>
+                            <td class="nkempty"></td>
+                            <td class="nkempty"></td>
+                        </tr>
+                        <tr>
+                            <td>采石场</td>
+                            <td class="nkempty"></td>
+                            <td class="nkempty"></td>
+                        </tr>
+                        <tr>
+                            <td>尾矿库</td>
+                            <td class="nkempty"></td>
+                            <td class="nkempty"></td>
+                        </tr>
+                        <tr>
+                            <td>石油天然气企业</td>
+                            <td class="nkempty"></td>
+                            <td class="nkempty"></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td class="nkempty"></td>
+                            <td class="nkempty"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="tab15">
+                    <table class="table">
+                        <th colspan="3">森工总局已履行建设项目“三同时”企业情况统计表</th>
+                        <tr>
+                            <td>项目</td>
+                            <td>批准建设数量</td>
+                            <td>竣工验收通过数量</td>
+                        </tr>
+                        <tr>
+                            <td>地下矿山</td>
+                            <td class="sgempty"></td>
+                            <td class="sgempty"></td>
+                        </tr>
+                        <tr>
+                            <td>露天矿山</td>
+                            <td class="sgempty"></td>
+                            <td class="sgempty"></td>
+                        </tr>
+                        <tr>
+                            <td>采石场</td>
+                            <td class="sgempty"></td>
+                            <td class="sgempty"></td>
+                        </tr>
+                        <tr>
+                            <td>尾矿库</td>
+                            <td class="sgempty"></td>
+                            <td class="sgempty"></td>
+                        </tr>
+                        <tr>
+                            <td>石油天然气企业</td>
+                            <td class="sgempty"></td>
+                            <td class="sgempty"></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td class="sgempty"></td>
+                            <td class="sgempty"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="tab16">
+                    <table class="table">
+                        <th colspan="3">绥芬河市已履行建设项目“三同时”企业情况统计表</th>
+                        <tr>
+                            <td>项目</td>
+                            <td>批准建设数量</td>
+                            <td>竣工验收通过数量</td>
+                        </tr>
+                        <tr>
+                            <td>地下矿山</td>
+                            <td class="sfhempty"></td>
+                            <td class="sfhempty"></td>
+                        </tr>
+                        <tr>
+                            <td>露天矿山</td>
+                            <td class="sfhempty"></td>
+                            <td class="sfhempty"></td>
+                        </tr>
+                        <tr>
+                            <td>采石场</td>
+                            <td class="sfhempty"></td>
+                            <td class="sfhempty"></td>
+                        </tr>
+                        <tr>
+                            <td>尾矿库</td>
+                            <td class="sfhempty"></td>
+                            <td class="sfhempty"></td>
+                        </tr>
+                        <tr>
+                            <td>石油天然气企业</td>
+                            <td class="sfhempty"></td>
+                            <td class="sfhempty"></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td class="sfhempty"></td>
+                            <td class="sfhempty"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="tab17">
+                    <table class="table">
+                        <th colspan="3">抚远已履行建设项目“三同时”企业情况统计表</th>
+                        <tr>
+                            <td>项目</td>
+                            <td>批准建设数量</td>
+                            <td>竣工验收通过数量</td>
+                        </tr>
+                        <tr>
+                            <td>地下矿山</td>
+                            <td class="fyempty"></td>
+                            <td class="fyempty"></td>
+                        </tr>
+                        <tr>
+                            <td>露天矿山</td>
+                            <td class="fyempty"></td>
+                            <td class="fyempty"></td>
+                        </tr>
+                        <tr>
+                            <td>采石场</td>
+                            <td class="fyempty"></td>
+                            <td class="fyempty"></td>
+                        </tr>
+                        <tr>
+                            <td>尾矿库</td>
+                            <td class="fyempty"></td>
+                            <td class="fyempty"></td>
+                        </tr>
+                        <tr>
+                            <td>石油天然气企业</td>
+                            <td class="fyempty"></td>
+                            <td class="fyempty"></td>
+                        </tr>
+                        <tr>
+                            <td>合计</td>
+                            <td class="fyempty"></td>
+                            <td class="fyempty"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="popbox">
+    </div>
+</body>
+
+</html>

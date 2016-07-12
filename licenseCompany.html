@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黑龙江省非煤矿山行政许可管理系统</title>
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/commend.css">
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/commend.js"></script>
+</head>
+<style>
+    td{
+        height: 35px;
+        text-align: center;
+        border:1px solid #ddd;
+    }
+    th{
+    	border:1px solid #ddd;
+    }
+</style>
+<body>
+    <div id="nav" class="" style="">
+    </div>
+    <div class="popbox"></div>
+    <button type="button" class="btn statistics" data-toggle="modal" style="margin-top:60px;width:100px;margin-left:20px;margin-bottom:-20px;">统计</button>
+    <button type="button" class="btn statistics" data-toggle="modal" style="margin-top:60px;width:100px;margin-bottom:-20px;" id="excel">导出Excel</button>
+    <div class="center control" style="">
+        <div class="centerindex control-group" id="userlog" style="margin-top: 50px;">
+            <table class="row">
+                <tr>
+                    <th rowspan="2" style="width:10%;">所属地区</th>
+                    <th rowspan="2" style="width:5%">合计</th>
+                    <th colspan="4" style="width:35%">金属非金属矿山</th>
+                    <th colspan="5" style="width:30%">尾矿库</th>
+                    <th rowspan="2" style="width:5%">石油天然气</th>
+                    <th rowspan="2" style="width:5%">非矿山企业</th>
+                    <th rowspan="2" style="width:5%">采掘施工</th>
+                    <th rowspan="2" style="width:5%">地质勘探</th>
+                </tr>
+                <tr>
+                    <th style="width:20px">小计</th>
+                    <th style="width:20px">地下矿山</th>
+                    <th style="width:20px">露天矿山</th>
+                    <th style="width:20px">联合开采</th>
+                    <th style="width:20px">小计</th>
+                    <th style="width:20px">二等（含）以上</th>
+                    <th style="width:20px">三等</th>
+                    <th style="width:20px">四等</th>
+                    <th style="width:20px">五等</th>
+                </tr>
+                <tr class="empty">
+                    <th>哈尔滨市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>齐齐哈尔市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>鸡西市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>鹤岗市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>双鸭山市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>大庆市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>伊春市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>佳木斯市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>七台河市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>牡丹江市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>黑河市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>绥化市</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>大兴安岭地区</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>农垦总局</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>森工总局</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>绥芬河</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>抚远</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="empty">
+                    <th>总计</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="16"  class="text-error"><strong>提示：如果金属非金属矿山和尾矿库里的小计数不等于各项之和，是因为单位信息没有填全或许可证申请时申请单位类型选择不正确！</strong></td>
+                </tr>
+            </table>
+        </div>
+        <!-- <div id="userlog"></div> -->
+    </div>
+
+    <div class="popbox">
+    </div>
+    <div id="footer" class="">
+        <span class="user">操作员:</span>
+    </div>
+</body>
+<script>
+$(document).ready(function(){
+    function aaa(){
+        var f = function(b){
+            for(var i = 0;i<b.data.length;i++){
+                $('.empty').eq(i).find('td').each(function(j){
+                	b.data[i][15] = b.data[i][0]
+                	b.data[i][j] = b.data[i][j+1]
+                	if(b.data[i][j] == null){
+                		b.data[i][j] = 0;
+                		$(this).text(b.data[i][j])
+                	}else{
+                		$(this).text(b.data[i][j])
+                	}
+                })
+            }
+        }
+        var e = {};
+        
+        pcdata('post', 'FlagTypeTotalQueryServlet', e, 'json', false, f);
+    }
+    $('.statistics').click(function(){
+        aaa()
+    })
+    $('#excel').click(function(){
+    	window.open("FlagTypeTotalToExcel")
+    })
+    
+})
+    
+
+</script>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>黑龙江省非煤矿山行政许可管理系统</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="static/css/commend.css">
+    <!-- <link rel="stylesheet" href="static/css/apply.css"> -->
+    <script src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/commend.js"></script>
+    <script type="text/javascript" src="static/js/applyMetal.js"></script>
+</head>
+<body>
+	<div id="nav" style="">
+    </div>
+    <div class="popbox"></div>
+	<div class="container applyTable">
+		<div class="tableHead">金属非金属矿山企业安全许可证申请书</div>
+		<table class="table table-bordered col-lg-6 col-lg-offset-3">
+			<tr>
+				<td class="tdTitle">申请编号</td>
+				<td><input type="text" class="form-control" id="applyNumber"></td>
+				<td class="tdTitle">申请日期</td>
+				<td><input type="text" id="stime" class="stime"/></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">受理编号</td>
+				<td><input type="text" class="form-control" id="acceptNumer"></td>
+				<td class="tdTitle">受理日期</td>
+				<td><input type="text" id="etime" class="etime"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">经办人</td>
+				<td><input type="text" class="form-control" id="transactor"></td>
+				<td class="tdTitle">联系电话</td>
+				<td><input type="text" class="form-control" id="tel"></td>
+			</tr>
+		</table>
+		<div class="row">
+			<button type="button" class="btn btn-info applyInfButton span3" data-toggle="modal">申请单位信息维护</button>
+			<button type="button" class="btn btn-info sameButton span3 offset6" data-toggle="modal">申请单位取证单位相同</button>
+		</div>
+		
+		<table class="table table-bordered">
+			<th rowspan="9">申请单位</th>
+			<tr>
+				<td class="tdTitle">名称</td>
+				<td class="empty" colspan="3" id="applyCompanyName"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">地址</td>
+				<td class="empty" colspan="3"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">邮政编码</td>
+				<td class="empty" colspan="3"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">从业人数</td>
+				<td class="empty"></td>
+				<td class="tdTitle">专职安全员人数</td>
+				<td class="empty"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">工商注册号</td>
+				<td class="empty"></td>
+				<td class="tdTitle">登记日期</td>
+				<td class="empty"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">登记机关</td>
+				<td class="empty" colspan="3"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">法定代表人</td>
+				<td class="empty"></td>
+				<td class="tdTitle">经济类型</td>
+				<td class="empty"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">安全负责人</td>
+				<td class="empty"></td>
+				<td class="tdTitle">办公电话</td>
+				<td class="empty"></td>
+			</tr>
+		</table>
+		<div class="row">
+			<button type="button" class="btn btn-info tabkeEvidentButton span3" data-toggle="modal">取证单位信息维护</button>
+		</div>
+		
+		<table class="table table-bordered">
+			<th rowspan="14">取证单位</th>
+			<tr>
+				<td class="tdTitle">名称</td>
+				<td class="tabkeEvident1" colspan="3" id="evidentCompanyName"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">地址</td>
+				<td class="tabkeEvident1" colspan="3"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">邮政编码</td>
+				<td class="tabkeEvident1"></td>
+				<td class="tdTitle">主要负责人</td>
+				<td class="tabkeEvident1"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">安全负责人</td>
+				<td class="tabkeEvident1"></td>
+				<td class="tdTitle">办公电话</td>
+				<td class="tabkeEvident1"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">开采主矿种</td>
+				<td class="tabkeEvident"></td>
+				<td class="tdTitle">开采方式</td>
+				<td class="tabkeEvident"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">设计生产能力</td>
+				<td class="tabkeEvident"></td>
+				<td class="tdTitle">产能单位</td>
+				<td class="tabkeEvident"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">从业人数</td>
+				<td class="tabkeEvident"></td>
+				<td class="tdTitle">专职安全人数</td>
+				<td class="tabkeEvident"></td>
+			</tr>
+			<th rowspan="3" class="tdTitle">采矿许可证</th>
+			<tr>
+				<td colspan="2" class="tdTitle">发证机关</td>
+				<td class="tabkeEvident"></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="tdTitle">证号</td>
+				<td class="tabkeEvident"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">投产日期</td>
+				<td class="tabkeEvident"></td>
+				<td class="tdTitle">设计服务年限</td>
+				<td class="tabkeEvident"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">竣工验收单位</td>
+				<td class="tabkeEvident"></td>
+				<td class="tdTitle">竣工验收批复文号</td>
+				<td class="tabkeEvident"></td>
+			</tr>
+			<tr>
+				<td class="tdTitle">是否是三同时</td>
+				<td class="tabkeEvident" colspan="3"></td>
+			</tr>	
+		</table>
+		<div class="row">
+			<button type="button" class="btn btn-info applyRangeButton span3" data-toggle="modal">选择许可范围</button>
+		</div>
+		
+		<table class="table table-bordered">
+			<tr>
+				<td class="tdTitle">申请许可范围</td>
+				<td id="applyRange"></td>
+			</tr>
+		</table>
+		<div class="row">
+			<button type="button" class="btn btn-info applysubmit span3" data-toggle="modal">提交</button>
+		</div>
+		
+	</div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
